@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
 
-        val dailynews = News("Le nouvel album de BTS est sorti ce matin !")
+        // val dailynews = News(1, "Le nouvel album de BTS est sorti ce matin !", "Notification des nouvelles sorties d'albums.")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
