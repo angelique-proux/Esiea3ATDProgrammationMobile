@@ -9,8 +9,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esiea3atd1.R
+import com.example.esiea3atd1.presentation.Singletons
 import com.example.esiea3atd1.presentation.api.PokeApi
-import com.example.esiea3atd1.presentation.api.MusicLyricsResponse
+import com.example.esiea3atd1.presentation.api.GenreListResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -47,26 +48,17 @@ class MusicListFragment : Fragment() {
             adapter = this@MusicListFragment.adapter
         }
 
-        //manipuler l'interface MusicApi
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://pokeapi.co/api/v2/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        val pokeApi: PokeApi = retrofit.create(PokeApi::class.java)
-
-        //créer la liste
-        pokeApi.getPokemonList().enqueue(object: Callback<MusicLyricsResponse> {
-            override fun onFailure(call: Call<MusicLyricsResponse>, t: Throwable) {
+        Singletons.pokeApi.getPokemonList().enqueue(object: Callback<GenreListResponse> {
+            override fun onFailure(call: Call<GenreListResponse>, t: Throwable) {
                 //TODO("Not yet implemented")
             }
 
             override fun onResponse(
-                call: Call<MusicLyricsResponse>,
-                response: Response<MusicLyricsResponse>
+                call: Call<GenreListResponse>,
+                response: Response<GenreListResponse>
             ) {
                 if(response.isSuccessful && response.body() != null){
-                    val musicResponse: MusicLyricsResponse = response.body()!!
+                    val musicResponse: GenreListResponse = response.body()!!
                     adapter.updateList(musicResponse.results)
                 }
             }

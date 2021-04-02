@@ -17,9 +17,9 @@
     </fragment>
     <fragment
         android:id="@+id/DetailGenreFragment"
-        android:name="com.example.esiea3atd1.SecondFragment"
+        android:name="com.example.esiea3atd1.presentation.detail.GenreDetailFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_genre_detail">
 
         <action
             android:id="@+id/NavigateToGenresList"
