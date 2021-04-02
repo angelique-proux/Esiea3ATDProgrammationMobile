@@ -21,6 +21,11 @@
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_genre_detail">
 
+        <argument
+            android:name="genreId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+
         <action
             android:id="@+id/NavigateToGenresList"
             app:destination="@id/GenreListFragment" />

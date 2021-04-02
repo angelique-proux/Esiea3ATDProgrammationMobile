@@ -10,5 +10,5 @@ interface PokeApi {
     fun getPokemonList(): Call<GenreListResponse>
 
     @GET("pokemon/{id}") //TODO : changer avec les bonnes valeurs
-    fun getPokemonDetails(@Path ("id") id: String): Call<GenreDetailResponse>
+    fun getPokemonDetails(@Path ("id") id: Int): Call<GenreDetailResponse>
 }

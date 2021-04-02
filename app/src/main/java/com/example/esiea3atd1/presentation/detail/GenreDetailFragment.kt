@@ -43,7 +43,8 @@ class GenreDetailFragment : Fragment() {
     }
 
     private fun callApi() {
-        Singletons.pokeApi.getPokemonDetails( "1").enqueue(object: Callback<GenreDetailResponse> {
+        val id: Int = arguments?.getInt("genreId") ?: -1
+        Singletons.pokeApi.getPokemonDetails( id).enqueue(object: Callback<GenreDetailResponse> {
             override fun onFailure(call: Call<GenreDetailResponse>, t: Throwable) {
                 //TODO("Not yet implemented")
             }

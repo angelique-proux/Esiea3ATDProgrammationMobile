@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esiea3atd1.R
 
-class MusicAdapter (private var dataSet: List<Genres>, var listener: ((Genres) -> Unit)? = null ) :
+class MusicAdapter (private var dataSet: List<Genres>, var listener: ((Int) -> Unit)? = null ) :
     RecyclerView.Adapter<MusicAdapter.ViewHolder>() {
 
 
@@ -46,7 +46,7 @@ class MusicAdapter (private var dataSet: List<Genres>, var listener: ((Genres) -
         val genre : Genres = dataSet[position]
         viewHolder.textView.text = genre.name
         viewHolder.itemView.setOnClickListener{
-            listener?.invoke(genre)
+            listener?.invoke(position)
         }
     }
 
