@@ -7,8 +7,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esiea3atd1.R
 
-class MusicAdapter (private var dataSet: List<Genres>) :
+class MusicAdapter (private var dataSet: List<Genres>, var listener: ((Genres) -> Unit)? = null ) :
     RecyclerView.Adapter<MusicAdapter.ViewHolder>() {
+
 
     /**
      * Provide a reference to the type of views that you are using
@@ -44,6 +45,9 @@ class MusicAdapter (private var dataSet: List<Genres>) :
         // contents of the view with that element
         val genre : Genres = dataSet[position]
         viewHolder.textView.text = genre.name
+        viewHolder.itemView.setOnClickListener{
+            listener?.invoke(genre)
+        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)
