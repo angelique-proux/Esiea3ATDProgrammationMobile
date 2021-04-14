@@ -10,8 +10,7 @@ import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.example.esiea3atd1.R
 import com.example.esiea3atd1.presentation.Singletons
-import com.example.esiea3atd1.presentation.api.GenreDetailResponse
-import com.example.esiea3atd1.presentation.api.GenreListResponse
+import com.example.esiea3atd1.presentation.api.CountryResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,7 +18,7 @@ import retrofit2.Response
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-class GenreDetailFragment : Fragment() {
+class CountryDetailFragment : Fragment() {
 
     private lateinit var textViewName: TextView
 
@@ -28,14 +27,14 @@ class GenreDetailFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_genre_detail, container, false)
+        return inflater.inflate(R.layout.fragment_country_detail, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.button_second).setOnClickListener {
-            findNavController().navigate(R.id.NavigateToGenresList)
+            findNavController().navigate(R.id.NavigateToRegionList)
         }
 
         textViewName = view.findViewById(R.id.genre_detail_name)
@@ -43,17 +42,17 @@ class GenreDetailFragment : Fragment() {
     }
 
     private fun callApi() {
-        val id: Int = arguments?.getInt("genreId") ?: -1
-        Singletons.pokeApi.getPokemonDetails( id).enqueue(object: Callback<GenreDetailResponse> {
-            override fun onFailure(call: Call<GenreDetailResponse>, t: Throwable) {
+        val countryName: String = arguments?.getString("countryName")!!
+        Singletons.countriesApi.getSpecificCountry(countryName).enqueue(object: Callback<List<CountryResponse>> {
+            override fun onFailure(call: Call<List<CountryResponse>>, t: Throwable) {
                 //TODO("Not yet implemented")
             }
             override fun onResponse(
-                call: Call<GenreDetailResponse>,
-                response: Response<GenreDetailResponse>
+                    call: Call<List<CountryResponse>>,
+                    response: Response<List<CountryResponse>>
             ) {
                 if(response.isSuccessful && response.body() != null){
-                    textViewName.text = response.body()!!.name
+                    textViewName.text = response.body()!!.get(0).name
                 }
             }
         })

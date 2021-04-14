@@ -1,15 +1,29 @@
 package com.example.esiea3atd1.presentation
 
-import com.example.esiea3atd1.presentation.api.PokeApi
+import com.example.esiea3atd1.presentation.CountryApplication.Companion.context
+import com.example.esiea3atd1.presentation.api.CountriesApi
+import okhttp3.Cache
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.io.File
 
 class Singletons {
     companion object {
-        val pokeApi: PokeApi = Retrofit.Builder()
-            .baseUrl("https://pokeapi.co/api/v2/")
-            .addConverterFactory(GsonConverterFactory.create())
+        var cache = Cache(File(context?.cacheDir, "responses"), 10 * 1024 * 1024)
+
+        val okhttpClient: OkHttpClient = OkHttpClient().newBuilder()
+            .cache(cache)
             .build()
-            .create(PokeApi::class.java)
+
+
+        val countriesApi: CountriesApi = Retrofit.Builder()
+                .baseUrl("https://restcountries.eu/rest/v2/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(okhttpClient)
+                .build()
+                .create(CountriesApi::class.java)
+
+
     }
 }

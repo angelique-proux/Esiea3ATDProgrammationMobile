@@ -3,31 +3,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/GenreListFragment">
+    app:startDestination="@id/RegionListFragment">
 
     <fragment
-        android:id="@+id/GenreListFragment"
-        android:name="com.example.esiea3atd1.presentation.list.MusicListFragment"
+        android:id="@+id/RegionListFragment"
+        android:name="com.example.esiea3atd1.presentation.list.RegionListFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_music_list">
+        tools:layout="@layout/fragment_region_list">
 
         <action
-            android:id="@+id/NavigateToDetailGenre"
-            app:destination="@id/DetailGenreFragment" />
+            android:id="@+id/NavigateToCountriesList"
+            app:destination="@id/CountriesFragment" />
     </fragment>
     <fragment
-        android:id="@+id/DetailGenreFragment"
-        android:name="com.example.esiea3atd1.presentation.detail.GenreDetailFragment"
+        android:id="@+id/CountriesFragment"
+        android:name="com.example.esiea3atd1.presentation.list.CountriesListFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_genre_detail">
+        tools:layout="@layout/fragment_country_list">
 
         <argument
-            android:name="genreId"
-            app:argType="integer"
+            android:name="regionName"
+            app:argType="string"
             android:defaultValue="-1" />
 
         <action
-            android:id="@+id/NavigateToGenresList"
-            app:destination="@id/GenreListFragment" />
+            android:id="@+id/NavigateToCountryDetail"
+            app:destination="@id/DetailCountryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/DetailCountryFragment"
+        android:name="com.example.esiea3atd1.presentation.detail.CountryDetailFragment"
+        android:label="@string/third_fragment_label"
+        tools:layout="@layout/fragment_country_detail">
+
+        <argument
+            android:name="countryName"
+            app:argType="string"
+            android:defaultValue="-1" />
+
+        <action
+            android:id="@+id/NavigateToRegionList"
+            app:destination="@id/RegionListFragment" />
     </fragment>
 </navigation>
