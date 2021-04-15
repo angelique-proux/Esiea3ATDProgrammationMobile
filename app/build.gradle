@@ -32,6 +32,14 @@ android {
     }
 }
 
+allprojects {
+    repositories {
+
+        //Repository to use Glide with SVG images
+        maven { url 'https://jitpack.io' }
+    }
+}
+
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -54,4 +62,7 @@ dependencies {
 
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
+
+    //Glide with SVG images
+    implementation 'com.github.corouteam:GlideToVectorYou:v2.0.0'
 }

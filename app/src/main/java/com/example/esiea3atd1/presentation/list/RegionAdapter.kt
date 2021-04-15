@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.esiea3atd1.R
 
-class RegionAdapter (private var dataSet: List<String>, var listener: ((String) -> Unit)? = null ) :
+class RegionAdapter (private var dataSet: List<Region>, var listener: ((String) -> Unit)? = null ) :
         RecyclerView.Adapter<RegionAdapter.ViewHolder>() {
 
 
@@ -37,7 +37,7 @@ class RegionAdapter (private var dataSet: List<String>, var listener: ((String) 
         return ViewHolder(view)
     }
 
-    fun updateList(list: ArrayList<String>){
+    fun updateList(list: List<Region>){
         dataSet = list
         notifyDataSetChanged()
     }
@@ -47,15 +47,16 @@ class RegionAdapter (private var dataSet: List<String>, var listener: ((String) 
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        val region : String = dataSet[position]
-        viewHolder.textView.text = region
+        val region : Region = dataSet[position]
+        // TODO the name must be change with the language of the application
+        viewHolder.textView.text = region.frName
         viewHolder.itemView.setOnClickListener {
-            listener?.invoke(region)
+            listener?.invoke(region.enName)
         }
 
         Glide
                 .with(viewHolder.itemView.context)
-                .load("https://picsum.photos/id/${position + 200}/200/300")
+                .load("https://picsum.photos/id/${position + 199}/200/300")
                 .centerCrop()
                 .into(viewHolder.imageView)
     }

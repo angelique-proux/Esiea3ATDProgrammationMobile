@@ -1,5 +1,7 @@
 package com.example.esiea3atd1.presentation.list
 
+import android.app.Activity
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.esiea3atd1.R
 import com.example.esiea3atd1.presentation.api.CountryResponse
+import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
 
 class CountryAdapter (private var dataSet: List<CountryResponse>, var listener: ((String) -> Unit)? = null ) :
     RecyclerView.Adapter<CountryAdapter.ViewHolder>() {
@@ -54,11 +57,8 @@ class CountryAdapter (private var dataSet: List<CountryResponse>, var listener: 
             listener?.invoke(country.name)
         }
 
-        Glide
-            .with(viewHolder.itemView.context)
-            .load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${position + 1}.png")
-            .centerCrop()
-            .into(viewHolder.imageView)
+        /*GlideToVectorYou
+                .justLoadImage(viewHolder.imageView.context as Activity?, Uri.parse(country.flag), viewHolder.imageView)*/
     }
 
     // Return the size of your dataset (invoked by the layout manager)

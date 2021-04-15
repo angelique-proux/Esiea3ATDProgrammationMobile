@@ -41,6 +41,11 @@
             app:argType="string"
             android:defaultValue="-1" />
 
+        <argument
+            android:name="countryCapital"
+            app:argType="string"
+            android:defaultValue="-1" />
+
         <action
             android:id="@+id/NavigateToRegionList"
             app:destination="@id/RegionListFragment" />

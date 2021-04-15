@@ -7,15 +7,55 @@
     tools:context=".presentation.detail.CountryDetailFragment">
 
     <TextView
-        android:id="@+id/genre_detail_name"
+        android:id="@+id/country_detail_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Bulbizarre"
-        app:layout_constraintVertical_bias="0.4"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/country_detail_capital_comment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="CountryName" />
+
+    <TextView
+        android:id="@+id/country_detail_capital_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Capital : "
+        app:layout_constraintBottom_toTopOf="@id/button_second"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/country_detail_capital_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/button_second"
+        app:layout_constraintStart_toEndOf="@id/country_detail_capital_comment"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="CountryCapital" />
+
+    <TextView
+        android:id="@+id/country_detail_population_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Population : "
+        app:layout_constraintBottom_toTopOf="@id/button_second"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/country_detail_name" />
+
+    <TextView
+        android:id="@+id/country_detail_population_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/button_second"
+        app:layout_constraintStart_toEndOf="@id/country_detail_population_comment"
+        app:layout_constraintTop_toTopOf="@id/country_detail_name"
+        tools:text="CountryPopulation" />
 
     <Button
         android:id="@+id/button_second"
@@ -25,6 +65,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/genre_detail_name" />
+        app:layout_constraintTop_toBottomOf="@id/country_detail_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

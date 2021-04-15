@@ -22,6 +22,10 @@ class CountryDetailFragment : Fragment() {
 
     private lateinit var textViewName: TextView
 
+    private lateinit var textViewCapital: TextView
+
+    private lateinit var textViewPopulation: TextView
+
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
@@ -37,7 +41,9 @@ class CountryDetailFragment : Fragment() {
             findNavController().navigate(R.id.NavigateToRegionList)
         }
 
-        textViewName = view.findViewById(R.id.genre_detail_name)
+        textViewName = view.findViewById(R.id.country_detail_name)
+        textViewCapital = view.findViewById(R.id.country_detail_capital_text)
+        textViewPopulation = view.findViewById(R.id.country_detail_population_text)
         callApi()
     }
 
@@ -53,6 +59,8 @@ class CountryDetailFragment : Fragment() {
             ) {
                 if(response.isSuccessful && response.body() != null){
                     textViewName.text = response.body()!!.get(0).name
+                    textViewCapital.text = response.body()!!.get(0).capital
+                    textViewPopulation.text = response.body()!!.get(0).population.toString()
                 }
             }
         })

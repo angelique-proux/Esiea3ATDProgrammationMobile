@@ -22,6 +22,8 @@ class RegionListFragment : Fragment() {
 
     private val layoutManager = LinearLayoutManager(context)
 
+    private val regionListAllLanguages = RegionList();
+
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
@@ -40,16 +42,10 @@ class RegionListFragment : Fragment() {
             adapter = this@RegionListFragment.adapter
         }
 
-        val musicList = arrayListOf<String>().apply {
-            add("Europe")
-            add("Africa")
-            add("Asia")
-            add("Americas")
-            add("Polar")
-            add("Oceania")
-        }
+        //Get all regions to show them
+        val regionList : List<Region> = regionListAllLanguages.getRegionList()!!
 
-        adapter.updateList(musicList)
+        adapter.updateList(regionList)
 
     }
 
