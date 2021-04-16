@@ -1,20 +1,16 @@
 package com.example.esiea3atd1.presentation.list
 
-import android.app.Activity
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.esiea3atd1.R
-import com.example.esiea3atd1.presentation.api.CountryResponse
-import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
+import com.example.esiea3atd1.presentation.api.UniversityResponse
 
-class CountryAdapter (private var dataSet: List<CountryResponse>, var listener: ((String) -> Unit)? = null ) :
-    RecyclerView.Adapter<CountryAdapter.ViewHolder>() {
+class UniversityAdapter (private var dataSet: List<UniversityResponse>) :
+        RecyclerView.Adapter<UniversityAdapter.ViewHolder>() {
 
     /**
      * Provide a reference to the type of views that you are using
@@ -35,12 +31,12 @@ class CountryAdapter (private var dataSet: List<CountryResponse>, var listener: 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.list_item, viewGroup, false)
+                .inflate(R.layout.list_item, viewGroup, false)
 
         return ViewHolder(view)
     }
 
-    fun updateList(list: List<CountryResponse>){
+    fun updateList(list: List<UniversityResponse>){
         dataSet = list
         notifyDataSetChanged()
     }
@@ -50,17 +46,10 @@ class CountryAdapter (private var dataSet: List<CountryResponse>, var listener: 
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        val country : CountryResponse = dataSet[position]
-        viewHolder.textView.text = country.name
-        viewHolder.itemView.setOnClickListener {
-            listener?.invoke(country.name)
-        }
-
-        /*GlideToVectorYou
-                .justLoadImage(viewHolder.imageView.context as Activity?, Uri.parse(country.flag), viewHolder.imageView)*/
+        val university : UniversityResponse = dataSet[position]
+        viewHolder.textView.text = university.name
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     override fun getItemCount() = dataSet.size
-
 }

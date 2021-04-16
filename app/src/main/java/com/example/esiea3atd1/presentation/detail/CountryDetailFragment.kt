@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.esiea3atd1.R
 import com.example.esiea3atd1.presentation.Singletons
 import com.example.esiea3atd1.presentation.api.CountryResponse
+import com.example.esiea3atd1.presentation.list.CountryAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,6 +29,8 @@ class CountryDetailFragment : Fragment() {
 
     private lateinit var textViewPopulation: TextView
 
+    private lateinit var textViewArea: TextView
+
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
@@ -40,11 +45,18 @@ class CountryDetailFragment : Fragment() {
         view.findViewById<Button>(R.id.button_second).setOnClickListener {
             findNavController().navigate(R.id.NavigateToRegionList)
         }
+        view.findViewById<Button>(R.id.universities_button).setOnClickListener{
+            /*var bundle = bundleOf("countryNameForUni" to textViewName.text.toString()) */
+            view.findNavController().navigate(R.id.NavigateToUniversitiesList/*, bundle*/)
+        }
+
 
         textViewName = view.findViewById(R.id.country_detail_name)
         textViewCapital = view.findViewById(R.id.country_detail_capital_text)
         textViewPopulation = view.findViewById(R.id.country_detail_population_text)
+        textViewArea = view.findViewById(R.id.country_detail_area_text)
         callApi()
+
     }
 
     private fun callApi() {
@@ -61,9 +73,9 @@ class CountryDetailFragment : Fragment() {
                     textViewName.text = response.body()!!.get(0).name
                     textViewCapital.text = response.body()!!.get(0).capital
                     textViewPopulation.text = response.body()!!.get(0).population.toString()
+                    textViewArea.text = response.body()!!.get(0).area.toString()
                 }
             }
         })
     }
-
 }

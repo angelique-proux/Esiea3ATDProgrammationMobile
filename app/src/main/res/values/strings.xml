@@ -14,4 +14,9 @@
     <string name="third">third</string>
     <string name="four">four</string>
     <string name="fifth">fifth</string>
+    <string name="capital_text">Capital :</string>
+    <string name="population_text">Population :</string>
+    <string name="area_text">Area :</string>
+    <string name="universities_list">UniversitiesList</string>
+    <string name="fourth_fragment_label">Fourth Fragment</string>
 </resources>

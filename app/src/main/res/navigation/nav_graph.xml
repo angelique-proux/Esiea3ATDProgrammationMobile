@@ -30,6 +30,7 @@
             android:id="@+id/NavigateToCountryDetail"
             app:destination="@id/DetailCountryFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/DetailCountryFragment"
         android:name="com.example.esiea3atd1.presentation.detail.CountryDetailFragment"
@@ -41,13 +42,28 @@
             app:argType="string"
             android:defaultValue="-1" />
 
+        <action
+            android:id="@+id/NavigateToRegionList"
+            app:destination="@id/RegionListFragment" />
+        <action
+            android:id="@+id/NavigateToUniversitiesList"
+            app:destination="@+id/UnivertiesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/UnivertiesFragment"
+        android:name="com.example.esiea3atd1.presentation.list.UniversitiesListFragment"
+        android:label="@string/fourth_fragment_label"
+        tools:layout="@layout/fragment_university_list">
+
         <argument
-            android:name="countryCapital"
+            android:name="countryNameForUni"
             app:argType="string"
             android:defaultValue="-1" />
 
         <action
-            android:id="@+id/NavigateToRegionList"
+            android:id="@+id/NavigateToRegionList2"
             app:destination="@id/RegionListFragment" />
     </fragment>
+
 </navigation>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
+        android:textSize="26sp"
         app:layout_constraintBottom_toTopOf="@id/country_detail_capital_comment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,18 +23,19 @@
         android:id="@+id/country_detail_capital_comment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Capital : "
-        app:layout_constraintBottom_toTopOf="@id/button_second"
+        android:text="@string/capital_text"
+        app:layout_constraintBottom_toTopOf="@id/universities_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.187"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
 
     <TextView
         android:id="@+id/country_detail_capital_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
+        app:layout_constraintBottom_toTopOf="@id/universities_button"
         app:layout_constraintStart_toEndOf="@id/country_detail_capital_comment"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="CountryCapital" />
@@ -41,8 +44,8 @@
         android:id="@+id/country_detail_population_comment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Population : "
-        app:layout_constraintBottom_toTopOf="@id/button_second"
+        android:text="@string/population_text"
+        app:layout_constraintBottom_toTopOf="@id/universities_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,10 +55,45 @@
         android:id="@+id/country_detail_population_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
+        app:layout_constraintBottom_toTopOf="@id/universities_button"
         app:layout_constraintStart_toEndOf="@id/country_detail_population_comment"
         app:layout_constraintTop_toTopOf="@id/country_detail_name"
         tools:text="CountryPopulation" />
+
+    <TextView
+        android:id="@+id/country_detail_area_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/area_text"
+        app:layout_constraintBottom_toTopOf="@id/universities_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/country_detail_population_comment"
+        app:layout_constraintVertical_bias="0.291" />
+
+    <TextView
+        android:id="@+id/country_detail_area_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/universities_button"
+        app:layout_constraintStart_toEndOf="@id/country_detail_area_comment"
+        app:layout_constraintTop_toTopOf="@id/country_detail_population_text"
+        app:layout_constraintVertical_bias="0.291"
+        tools:text="CountryArea" />
+
+
+    <Button
+        android:id="@+id/universities_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/universities_list"
+        app:layout_constraintBottom_toBottomOf="@id/button_second"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/country_detail_name"
+        app:layout_constraintVertical_bias="0.74" />
 
     <Button
         android:id="@+id/button_second"
@@ -64,7 +102,9 @@
         android:text="@string/previous"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/country_detail_name" />
+        app:layout_constraintTop_toBottomOf="@id/country_detail_name"
+        app:layout_constraintVertical_bias="0.848" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
