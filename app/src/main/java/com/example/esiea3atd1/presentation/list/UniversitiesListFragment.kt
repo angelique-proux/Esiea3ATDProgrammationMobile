@@ -1,7 +1,10 @@
 package com.example.esiea3atd1.presentation.list
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +24,7 @@ class UniversitiesListFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
 
-    private val adapter = UniversityAdapter(listOf())
+    private val adapter = UniversityAdapter(listOf(), ::onClickedUniversity)
 
     private val sharedPref: SharedPreferences? = activity?.getSharedPreferences("app", Context.MODE_PRIVATE)
 
@@ -37,6 +40,7 @@ class UniversitiesListFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_university_list, container, false)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -48,14 +52,15 @@ class UniversitiesListFragment : Fragment() {
         }
 
         textViewCountry = view.findViewById(R.id.country_name)
-        textViewCountry.text = "Coucou" /*+ arguments?.getString("countryNameForUni")*/
+        textViewCountry.text = arguments?.getString("countryNameForUni")
 
-        /*val list = getListFromCache()
+
+        val list = getListFromCache()
         if(list.isEmpty()){
             callApi()
         } else {
             showList(list)
-        }*/
+        }
 
     }
 
@@ -72,8 +77,10 @@ class UniversitiesListFragment : Fragment() {
     private fun callApi() {
         val country: String = arguments?.getString("countryNameForUni")!!
         Singletons.universityApi.getUniversitiesPerCountry(country).enqueue(object: Callback<List<UniversityResponse>> {
+            @SuppressLint("SetTextI18n")
             override fun onFailure(call: Call<List<UniversityResponse>>, t: Throwable) {
                 //TODO("Not yet implemented")
+                textViewCountry.text = "Error"
             }
             override fun onResponse(
                     call: Call<List<UniversityResponse>>,
@@ -81,7 +88,7 @@ class UniversitiesListFragment : Fragment() {
             ) {
                 if (response.isSuccessful && response.body() != null) {
                     val universitiesResponse: List<UniversityResponse> = response.body()!!
-                    textViewCountry.text = response.body()!!.get(0).country
+                    textViewCountry.text = response.body()!![0].country
                     saveListIntoCache()
                     showList(universitiesResponse)
                 }
@@ -92,5 +99,12 @@ class UniversitiesListFragment : Fragment() {
 
     private fun showList(universitiesList: List<UniversityResponse>) {
         adapter.updateList(universitiesList)
+    }
+
+
+    private fun onClickedUniversity(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(url)
+        startActivity(intent)
     }
 }

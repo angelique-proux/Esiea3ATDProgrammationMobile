@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.esiea3atd1.R
 import com.example.esiea3atd1.presentation.api.UniversityResponse
 
-class UniversityAdapter (private var dataSet: List<UniversityResponse>) :
+class UniversityAdapter (private var dataSet: List<UniversityResponse>, private var listener: ((String) -> Unit)? = null ) :
         RecyclerView.Adapter<UniversityAdapter.ViewHolder>() {
 
     /**
@@ -25,6 +25,7 @@ class UniversityAdapter (private var dataSet: List<UniversityResponse>) :
             textView = view.findViewById(R.id.list_item_name)
             imageView = view.findViewById(R.id.list_item_pic)
         }
+
     }
 
     // Create new views (invoked by the layout manager)
@@ -47,7 +48,10 @@ class UniversityAdapter (private var dataSet: List<UniversityResponse>) :
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         val university : UniversityResponse = dataSet[position]
-        viewHolder.textView.text = university.name
+        viewHolder.textView.text = university.country
+        viewHolder.itemView.setOnClickListener {
+            listener?.invoke(university.web_pages[0])
+        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)

@@ -22,7 +22,7 @@ class RegionListFragment : Fragment() {
 
     private val layoutManager = LinearLayoutManager(context)
 
-    private val regionListAllLanguages = RegionList();
+    private val regionListAllLanguages = RegionList()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,

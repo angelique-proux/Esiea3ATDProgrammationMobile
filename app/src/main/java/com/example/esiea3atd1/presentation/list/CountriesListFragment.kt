@@ -26,7 +26,7 @@ class CountriesListFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
 
-    private val adapter = CountryAdapter(listOf(), ::onClikedCountry)
+    private val adapter = CountryAdapter(listOf(), ::onClickedCountry)
 
     private val sharedPref: SharedPreferences? = activity?.getSharedPreferences("app", Context.MODE_PRIVATE)
 
@@ -93,7 +93,7 @@ class CountriesListFragment : Fragment() {
         adapter.updateList(countriesList)
     }
 
-    private fun onClikedCountry(name: String) {
+    private fun onClickedCountry(name: String) {
         findNavController().navigate(R.id.NavigateToCountryDetail, bundleOf(
             "countryName" to name
         ))

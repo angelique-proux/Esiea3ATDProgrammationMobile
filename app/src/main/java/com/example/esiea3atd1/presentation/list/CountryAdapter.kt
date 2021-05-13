@@ -1,19 +1,15 @@
 package com.example.esiea3atd1.presentation.list
 
-import android.app.Activity
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.esiea3atd1.R
 import com.example.esiea3atd1.presentation.api.CountryResponse
-import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
 
-class CountryAdapter (private var dataSet: List<CountryResponse>, var listener: ((String) -> Unit)? = null ) :
+class CountryAdapter (private var dataSet: List<CountryResponse>, private var listener: ((String) -> Unit)? = null ) :
     RecyclerView.Adapter<CountryAdapter.ViewHolder>() {
 
     /**
@@ -21,14 +17,9 @@ class CountryAdapter (private var dataSet: List<CountryResponse>, var listener: 
      * (custom ViewHolder).
      */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView
-        val imageView: ImageView
+        val textView: TextView = view.findViewById(R.id.list_item_name)
+        val imageView: ImageView = view.findViewById(R.id.list_item_pic)
 
-        init {
-            // Define click listener for the ViewHolder's View.
-            textView = view.findViewById(R.id.list_item_name)
-            imageView = view.findViewById(R.id.list_item_pic)
-        }
     }
 
     // Create new views (invoked by the layout manager)
