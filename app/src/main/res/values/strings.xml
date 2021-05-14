@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Esiea3ATD1</string>
+    <string name="app_name">UniversCité</string>
     <string name="action_settings">Settings</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -19,4 +20,38 @@
     <string name="area_text">Area :</string>
     <string name="universities_list">UniversitiesList</string>
     <string name="fourth_fragment_label">Fourth Fragment</string>
+    <string name="menu_fragment_label">Menu Fragment</string>
+
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="location_header">Location</string>
+    <string name="language_header">Langage</string>
+    <string name="themes_header">Theme</string>
+    <string name="user_header">Name</string>
+
+    <!-- User Preferences -->
+    <string name="user_name">My username</string>
+
+    <!-- Location Preferences -->
+    <string name="location_region">My region</string>
+    <string name="location_country">My country\'s native name</string>
+
+    <!-- Language Preferences -->
+    <string name="language_title">My language two first letters</string>
+    <string name="language_app">Application\'s language</string>
+
+    <!-- Theme Preferences -->
+    <string name="theme_title">Dark theme?</string>
+    <string name="dark_theme_on">Dark theme chosen</string>
+    <string name="dark_theme_off">Light theme chosen</string>
+
+
+    <string name="all_regions">All regions</string>
+    <string name="my_country">My country</string>
+    <string name="my_language_s_countries">My language\'s countries</string>
+    <string name="application_s_informations">Application\'s informations</string>
+    <string name="my_region">My region</string>
+
+
 </resources>

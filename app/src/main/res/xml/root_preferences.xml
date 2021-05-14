@@ -1,0 +1,64 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:icon="@drawable/ic_baseline_person_24"
+        app:title="@string/user_header">
+
+        <EditTextPreference
+            app:key="username"
+            app:title="@string/user_name"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        app:icon="@drawable/ic_baseline_landscape_24"
+        app:title="@string/location_header">
+
+        <ListPreference
+            app:key="region"
+            app:title="@string/location_region"
+            app:defaultValue="reply"
+            app:entries="@array/region_entries"
+            app:entryValues="@array/region_values"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:defaultValue="Enter your country's native name"
+            app:key="country"
+            app:title="@string/location_country"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:icon="@drawable/ic_baseline_language_24"
+        app:title="@string/language_header">
+
+        <EditTextPreference
+            app:key="mylanguage"
+            app:title="@string/language_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="reply"
+            app:entries="@array/language_titles"
+            app:entryValues="@array/language_values"
+            app:key="applanguage"
+            app:title="@string/language_app"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:icon="@drawable/ic_baseline_brightness_medium_24"
+        app:title="@string/themes_header">
+
+        <SwitchPreferenceCompat
+            app:key="theme"
+            app:summaryOff="@string/dark_theme_off"
+            app:summaryOn="@string/dark_theme_on"
+            app:title="@string/theme_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -42,7 +42,7 @@ class CountryDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.button_second).setOnClickListener {
-            findNavController().navigate(R.id.NavigateToRegionList)
+            findNavController().navigate(R.id.NavigateToMenu)
         }
         view.findViewById<Button>(R.id.universities_button).setOnClickListener{
             val bundle = bundleOf("countryNameForUni" to textViewName.text.toString())

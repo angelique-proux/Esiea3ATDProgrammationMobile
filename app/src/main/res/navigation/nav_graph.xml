@@ -3,7 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/RegionListFragment">
+    app:startDestination="@id/MenuFragment">
+
+    <fragment
+        android:id="@+id/MenuFragment"
+        android:name="com.example.esiea3atd1.MenuFragment"
+        android:label="@string/menu_fragment_label"
+        tools:layout="@layout/fragment_menu">
+
+        <action
+            android:id="@+id/NavigateToRegionList0"
+            app:destination="@id/RegionListFragment" />
+        <action
+            android:id="@+id/NavigateToMyRegion"
+            app:destination="@id/CountriesFragment" />
+        <action
+            android:id="@+id/NavigateToMyCountry"
+            app:destination="@id/DetailCountryFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/RegionListFragment"
@@ -43,8 +60,8 @@
             android:defaultValue="-1" />
 
         <action
-            android:id="@+id/NavigateToRegionList"
-            app:destination="@id/RegionListFragment" />
+            android:id="@+id/NavigateToMenu"
+            app:destination="@id/MenuFragment" />
         <action
             android:id="@+id/NavigateToUniversitiesList"
             app:destination="@+id/UnivertiesFragment" />

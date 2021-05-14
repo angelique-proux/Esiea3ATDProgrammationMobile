@@ -1,0 +1,33 @@
+<resources>
+    <!-- Language Preference -->
+    <string-array name="language_titles">
+        <item>French</item>
+        <item>English</item>
+        <item>Deutsch</item>
+    </string-array>
+
+    <string-array name="language_values">
+        <item>fr</item>
+        <item>eng</item>
+        <item>de</item>
+    </string-array>
+
+    <!-- Region Preference -->
+    <string-array name="region_entries">
+        <item>Afrique</item>
+        <item>Amériques</item>
+        <item>Asie</item>
+        <item>Europe</item>
+        <item>Océanie</item>
+        <item>Pôle</item>
+    </string-array>
+
+    <string-array name="region_values">
+        <item>Africa</item>
+        <item>Americas</item>
+        <item>Asia</item>
+        <item>Europe</item>
+        <item>Oceania</item>
+        <item>Polar</item>
+    </string-array>
+</resources>
