@@ -3,30 +3,27 @@
     <string name="action_settings">Settings</string>
 
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="third_fragment_label">Third Fragment</string>
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="third_fragment_label" translatable="false">Third Fragment</string>
+    <string name="fourth_fragment_label" translatable="false">Fourth Fragment</string>
+    <string name="menu_fragment_label" translatable="false">Menu Fragment</string>
+
+    <!-- Buttons -->
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello ! Welcome on my first application !</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="second">second</string>
-    <string name="third">third</string>
-    <string name="four">four</string>
-    <string name="fifth">fifth</string>
+    <!-- Country Fragment -->
     <string name="capital_text">Capital :</string>
     <string name="population_text">Population :</string>
     <string name="area_text">Area :</string>
     <string name="universities_list">UniversitiesList</string>
-    <string name="fourth_fragment_label">Fourth Fragment</string>
-    <string name="menu_fragment_label">Menu Fragment</string>
 
     <string name="title_activity_settings">Settings</string>
 
     <!-- Preference Titles -->
     <string name="location_header">Location</string>
-    <string name="language_header">Langage</string>
+    <string name="language_header">Language</string>
     <string name="themes_header">Theme</string>
     <string name="user_header">Name</string>
 
@@ -35,21 +32,20 @@
 
     <!-- Location Preferences -->
     <string name="location_region">My region</string>
-    <string name="location_country">My country\'s english name</string>
+    <string name="location_country">Country\'s english name</string>
 
     <!-- Language Preferences -->
     <string name="language_title">My language two first letters</string>
-    <string name="language_app">Application\'s language</string>
+    <string name="language_app">Application language</string>
 
     <!-- Theme Preferences -->
-    <string name="theme_title">Dark theme?</string>
-    <string name="dark_theme_on">Dark theme chosen</string>
-    <string name="dark_theme_off">Light theme chosen</string>
+
+    <string name="theme_title">Application style</string>
 
 
     <string name="all_regions">All regions</string>
     <string name="my_country">My country</string>
-    <string name="my_language_s_countries">My language\'s countries</string>
+    <string name="my_language_s_countries">Countries of my language</string>
     <string name="application_s_informations">Application\'s informations</string>
     <string name="my_region">My region</string>
 

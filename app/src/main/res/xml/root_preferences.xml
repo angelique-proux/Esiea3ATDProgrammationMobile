@@ -37,16 +37,16 @@
         app:title="@string/language_header">
 
         <EditTextPreference
-            app:key="mylanguage"
+            app:key="my_language"
             app:defaultValue="fr"
             app:title="@string/language_title"
             app:useSimpleSummaryProvider="true" />
 
         <ListPreference
-            app:defaultValue="reply"
+            app:defaultValue="fr"
             app:entries="@array/language_titles"
             app:entryValues="@array/language_values"
-            app:key="applanguage"
+            app:key="app_language"
             app:title="@string/language_app"
             app:useSimpleSummaryProvider="true" />
 
@@ -61,14 +61,8 @@
             app:entries="@array/theme_entries"
             app:entryValues="@array/theme_values"
             app:key="theme_choice"
-            app:title="Change theme"
+            app:title="@string/theme_title"
             app:useSimpleSummaryProvider="true"/>
-
-        <SwitchPreferenceCompat
-            app:key="theme"
-            app:summaryOff="@string/dark_theme_off"
-            app:summaryOn="@string/dark_theme_on"
-            app:title="@string/theme_title" />
     </PreferenceCategory>
 
 </PreferenceScreen>

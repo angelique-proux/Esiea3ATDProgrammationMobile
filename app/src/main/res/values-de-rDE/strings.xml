@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">UniversCité</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="next">Nächste</string>
+    <string name="previous">Vorhergehend</string>
+    <string name="capital_text">Hauptstadt :</string>
+    <string name="population_text">Bevölkerung :</string>
+    <string name="area_text">Fläche :</string>
+    <string name="universities_list">Liste der Universitäten</string>
+    <string name="location_header">Position</string>
+    <string name="language_header">Sprache</string>
+    <string name="themes_header">Stil</string>
+    <string name="user_header">Pseudonym</string>
+    <string name="title_activity_settings">Einstellungen der Anwendung</string>
+    <string name="user_name">Mein Nutzername</string>
+    <string name="location_region">Meine Region</string>
+    <string name="location_country">Mein Land (auf Englisch)</string>
+    <string name="language_title">Meine Sprache (erste 2 Buchstaben)</string>
+    <string name="language_app">Sprache der Anwendung</string>
+    <string name="theme_title">Anwendungsstil</string>
+    <string name="all_regions">Alle Regionen</string>
+    <string name="my_country">Mein Land</string>
+    <string name="my_region">Meine Region</string>
+    <string name="my_language_s_countries">Länder meiner Sprache</string>
+    <string name="application_s_informations">Informationen zur Anwendung</string>
+</resources>

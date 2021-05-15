@@ -8,23 +8,22 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
+import com.example.esiea3atd1.settings.LanguageManager
 import com.tapadoo.alerter.Alerter
 
 class MainActivity : AppCompatActivity() {
 
     private var SETTINGS_CODE = 243
     private lateinit var sharedpreferences: SharedPreferences
+    private lateinit var langManager: LanguageManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        langManager = LanguageManager(this)
+
         super.onCreate(savedInstanceState)
+        setLanguageOfApp()
         setThemeOfApp()
         setContentView(R.layout.activity_main)
-
-        //PreferenceManager.setDefaultValues(this, xml.root_preferences, false)
-        /*setContentView(R.layout.fragment_menu)
-        text_username = findViewById(R.id.menu_text)
-        readSettings()*/
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -76,6 +75,18 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode==SETTINGS_CODE) {
             this.recreate()
+        }
+    }
+
+    //Change language
+    private fun setLanguageOfApp() {
+        val sharedpreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
+        if(sharedpreferences.getString("app_language", "fr").equals("fr")) {
+            langManager.updateLanguageRessources("fr")
+        } else if(sharedpreferences.getString("app_language", "fr").equals("de")){
+            langManager.updateLanguageRessources("de")
+        } else {
+            langManager.updateLanguageRessources("en")
         }
     }
 

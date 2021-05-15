@@ -1,20 +1,29 @@
 package com.example.esiea3atd1
 
 import android.content.SharedPreferences
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
+import com.example.esiea3atd1.settings.LanguageManager
+import java.util.*
 
 class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
 
+    private lateinit var langManager: LanguageManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        langManager = LanguageManager(this)
         PreferenceManager.getDefaultSharedPreferences(baseContext)
             .registerOnSharedPreferenceChangeListener(this)
 
         setThemeOfApp()
+        setLanguageOfApp()
+
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.settings_activity)
         if (savedInstanceState == null) {
             supportFragmentManager
@@ -57,6 +66,20 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         if(key.equals("theme_choice")) {
             this.recreate()
+        } else if (key.equals("app_language")) {
+            this.recreate()
+        }
+    }
+
+    //Change language
+    private fun setLanguageOfApp() {
+        val sharedpreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
+        if(sharedpreferences.getString("app_language", "fr").equals("fr")) {
+            langManager.updateLanguageRessources("fr")
+        } else if(sharedpreferences.getString("app_language", "fr").equals("de")){
+            langManager.updateLanguageRessources("de")
+        } else {
+            langManager.updateLanguageRessources("en")
         }
     }
 }
