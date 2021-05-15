@@ -35,7 +35,7 @@
 
     <!-- Location Preferences -->
     <string name="location_region">My region</string>
-    <string name="location_country">My country\'s native name</string>
+    <string name="location_country">My country\'s english name</string>
 
     <!-- Language Preferences -->
     <string name="language_title">My language two first letters</string>

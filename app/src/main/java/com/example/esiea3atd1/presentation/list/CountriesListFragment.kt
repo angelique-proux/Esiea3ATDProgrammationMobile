@@ -70,22 +70,42 @@ class CountriesListFragment : Fragment() {
     }
 
     private fun callApi() {
-        val region: String = arguments?.getString("regionName")!!
-        Singletons.countriesApi.getCountriesPerRegion(region).enqueue(object: Callback<List<CountryResponse>> {
-            override fun onFailure(call: Call<List<CountryResponse>>, t: Throwable) {
-                //TODO("Not yet implemented")
-            }
-            override fun onResponse(
+        val region: String = arguments?.getString("regionName").toString()
+        val language: String = arguments?.getString("languageName").toString()
+        if (region != "-1") {
+            // Do Something
+            Singletons.countriesApi.getCountriesPerRegion(region).enqueue(object: Callback<List<CountryResponse>> {
+                override fun onFailure(call: Call<List<CountryResponse>>, t: Throwable) {
+                    //TODO("Not yet implemented")
+                }
+                override fun onResponse(
                     call: Call<List<CountryResponse>>,
                     response: Response<List<CountryResponse>>
-            ) {
-                if (response.isSuccessful && response.body() != null) {
-                    val countriesResponse: List<CountryResponse> = response.body()!!
-                    saveListIntoCache()
-                    showList(countriesResponse)
+                ) {
+                    if (response.isSuccessful && response.body() != null) {
+                        val countriesResponse: List<CountryResponse> = response.body()!!
+                        saveListIntoCache()
+                        showList(countriesResponse)
+                    }
                 }
-            }
-        })
+            })
+        } else {
+            Singletons.countriesApi.getCountriesPerLanguage(language).enqueue(object: Callback<List<CountryResponse>> {
+                override fun onFailure(call: Call<List<CountryResponse>>, t: Throwable) {
+                    //TODO("Not yet implemented")
+                }
+                override fun onResponse(
+                    call: Call<List<CountryResponse>>,
+                    response: Response<List<CountryResponse>>
+                ) {
+                    if (response.isSuccessful && response.body() != null) {
+                        val countriesResponse: List<CountryResponse> = response.body()!!
+                        saveListIntoCache()
+                        showList(countriesResponse)
+                    }
+                }
+            })
+        }
     }
 
 

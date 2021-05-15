@@ -1,13 +1,19 @@
 package com.example.esiea3atd1
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.PreferenceManager
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        PreferenceManager.getDefaultSharedPreferences(baseContext)
+            .registerOnSharedPreferenceChangeListener(this)
+
+        setThemeOfApp()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.settings_activity)
         if (savedInstanceState == null) {
@@ -36,5 +42,21 @@ class SettingsActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    //Change theme
+    private fun setThemeOfApp() {
+        val sharedpreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
+        if(sharedpreferences.getString("theme_choice", "BRIGHT").equals("BRIGHT")) {
+            setTheme(R.style.BrightTheme)
+        } else {
+            setTheme(R.style.DarkTheme)
+        }
+    }
+
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        if(key.equals("theme_choice")) {
+            this.recreate()
+        }
     }
 }

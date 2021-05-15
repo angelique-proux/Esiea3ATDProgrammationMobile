@@ -1,19 +1,30 @@
 package com.example.esiea3atd1
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.preference.PreferenceManager
 import com.tapadoo.alerter.Alerter
 
 class MainActivity : AppCompatActivity() {
 
+    private var SETTINGS_CODE = 243
+    private lateinit var sharedpreferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setThemeOfApp()
         setContentView(R.layout.activity_main)
-        setSupportActionBar(findViewById(R.id.toolbar))
+
+        //PreferenceManager.setDefaultValues(this, xml.root_preferences, false)
+        /*setContentView(R.layout.fragment_menu)
+        text_username = findViewById(R.id.menu_text)
+        readSettings()*/
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -30,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_settings -> {
                 val intent = Intent(this, SettingsActivity::class.java)
-                startActivity(intent)
+                startActivityForResult(intent, SETTINGS_CODE)
                 true
             }
             R.id.action_notifications -> {
@@ -47,6 +58,24 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    //Change theme
+    private fun setThemeOfApp() {
+        sharedpreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
+        if(sharedpreferences.getString("theme_choice", "BRIGHT").equals("BRIGHT")) {
+            setTheme(R.style.BrightTheme)
+        } else {
+            setTheme(R.style.DarkTheme)
+        }
+    }
+
+    //Recreate Activity if the theme has changed
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode==SETTINGS_CODE) {
+            this.recreate()
         }
     }
 

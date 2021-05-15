@@ -7,6 +7,7 @@
         <EditTextPreference
             app:key="username"
             app:title="@string/user_name"
+            app:defaultValue=""
             app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
 
@@ -18,13 +19,13 @@
         <ListPreference
             app:key="region"
             app:title="@string/location_region"
-            app:defaultValue="reply"
+            app:defaultValue="Europe"
             app:entries="@array/region_entries"
             app:entryValues="@array/region_values"
             app:useSimpleSummaryProvider="true" />
 
         <EditTextPreference
-            app:defaultValue="Enter your country's native name"
+            app:defaultValue="France"
             app:key="country"
             app:title="@string/location_country"
             app:useSimpleSummaryProvider="true" />
@@ -37,6 +38,7 @@
 
         <EditTextPreference
             app:key="mylanguage"
+            app:defaultValue="fr"
             app:title="@string/language_title"
             app:useSimpleSummaryProvider="true" />
 
@@ -53,6 +55,14 @@
     <PreferenceCategory
         app:icon="@drawable/ic_baseline_brightness_medium_24"
         app:title="@string/themes_header">
+
+        <ListPreference
+            app:defaultValue="BRIGHT"
+            app:entries="@array/theme_entries"
+            app:entryValues="@array/theme_values"
+            app:key="theme_choice"
+            app:title="Change theme"
+            app:useSimpleSummaryProvider="true"/>
 
         <SwitchPreferenceCompat
             app:key="theme"

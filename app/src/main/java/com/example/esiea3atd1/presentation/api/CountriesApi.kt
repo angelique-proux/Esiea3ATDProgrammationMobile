@@ -12,4 +12,6 @@ interface CountriesApi {
     @GET("name/{name}?fields=name;capital;region;subregion;population;area;borders;currencies;languages;flag")
     fun getSpecificCountry(@Path("name") name: String): Call<List<CountryResponse>>
 
+    @GET("lang/{language}?fields=name;capital;region;subregion;population;area;borders;currencies;languages;flag")
+    fun getCountriesPerLanguage(@Path("language") language: String): Call<List<CountryResponse>>
 }

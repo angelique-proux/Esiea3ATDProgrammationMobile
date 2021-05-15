@@ -22,4 +22,31 @@
     <style name="Theme.Esiea3ATD1.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Esiea3ATD1.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <!-- New themes : bright -->
+    <style name="BrightTheme" parent="Base.AppTheme.BrightTheme"/>
+    <style name="Base.AppTheme.BrightTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/green2</item>
+        <item name="colorPrimaryVariant">@color/blue1</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/blue2</item>
+        <item name="colorSecondaryVariant">@color/blue3</item>
+        <item name="colorOnSecondary">@color/black</item>
+    </style>
+
+    <!-- New themes : dark -->
+    <style name="DarkTheme" parent="Base.AppTheme.DarkTheme"/>
+    <style name="Base.AppTheme.DarkTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/green2dark</item>
+        <item name="colorPrimaryVariant">@color/blue1dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/blue2dark</item>
+        <item name="colorSecondaryVariant">@color/blue3dark</item>
+        <item name="colorOnSecondary">@color/black</item>
+    </style>
 </resources>
