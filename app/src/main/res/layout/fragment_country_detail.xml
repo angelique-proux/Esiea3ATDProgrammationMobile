@@ -7,16 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".presentation.detail.CountryDetailFragment">
 
+    <ImageView
+        android:id="@+id/country_detail_flag"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:contentDescription="Country flag"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.018" />
+
     <TextView
         android:id="@+id/country_detail_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
         android:textSize="26sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/country_detail_capital_comment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.648"
         tools:text="CountryName" />
 
     <TextView
@@ -35,10 +49,23 @@
         android:id="@+id/country_detail_capital_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         app:layout_constraintBottom_toTopOf="@id/universities_button"
         app:layout_constraintStart_toEndOf="@id/country_detail_capital_comment"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496"
         tools:text="CountryCapital" />
+
+    <TextView
+        android:id="@+id/country_detail_population_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toTopOf="@id/universities_button"
+        app:layout_constraintStart_toEndOf="@id/country_detail_population_comment"
+        app:layout_constraintTop_toTopOf="@id/country_detail_name"
+        app:layout_constraintVertical_bias="0.407"
+        tools:text="CountryPopulation" />
 
     <TextView
         android:id="@+id/country_detail_population_comment"
@@ -47,18 +74,11 @@
         android:text="@string/population_text"
         app:layout_constraintBottom_toTopOf="@id/universities_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.201"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/country_detail_name" />
-
-    <TextView
-        android:id="@+id/country_detail_population_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/universities_button"
-        app:layout_constraintStart_toEndOf="@id/country_detail_population_comment"
         app:layout_constraintTop_toTopOf="@id/country_detail_name"
-        tools:text="CountryPopulation" />
+        app:layout_constraintVertical_bias="0.41" />
+
 
     <TextView
         android:id="@+id/country_detail_area_comment"
@@ -67,21 +87,69 @@
         android:text="@string/area_text"
         app:layout_constraintBottom_toTopOf="@id/universities_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/country_detail_population_comment"
-        app:layout_constraintVertical_bias="0.291" />
+        app:layout_constraintVertical_bias="0.158" />
 
     <TextView
         android:id="@+id/country_detail_area_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         app:layout_constraintBottom_toTopOf="@id/universities_button"
         app:layout_constraintStart_toEndOf="@id/country_detail_area_comment"
         app:layout_constraintTop_toTopOf="@id/country_detail_population_text"
-        app:layout_constraintVertical_bias="0.291"
+        app:layout_constraintVertical_bias="0.162"
         tools:text="CountryArea" />
 
+    <TextView
+        android:id="@+id/country_detail_continent_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/continent_text"
+        app:layout_constraintBottom_toTopOf="@id/universities_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/country_detail_population_comment"
+        app:layout_constraintVertical_bias="0.336" />
+
+    <TextView
+        android:id="@+id/country_detail_borders_text"
+        android:layout_width="165dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toTopOf="@id/universities_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toEndOf="@+id/country_detail_borders_comment"
+        app:layout_constraintTop_toTopOf="@id/country_detail_population_text"
+        app:layout_constraintVertical_bias="0.735"
+        tools:text="CountryBorders" />
+
+    <TextView
+        android:id="@+id/country_detail_continent_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toTopOf="@id/universities_button"
+        app:layout_constraintStart_toEndOf="@+id/country_detail_continent_comment"
+        app:layout_constraintTop_toTopOf="@id/country_detail_population_text"
+        app:layout_constraintVertical_bias="0.339"
+        tools:text="CountryContinent" />
+
+    <TextView
+        android:id="@+id/country_detail_borders_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/borders_text"
+        app:layout_constraintBottom_toTopOf="@id/universities_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.226"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/country_detail_population_comment"
+        app:layout_constraintVertical_bias="0.504" />
 
     <Button
         android:id="@+id/universities_button"

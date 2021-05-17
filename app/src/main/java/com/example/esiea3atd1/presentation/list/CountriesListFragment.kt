@@ -110,7 +110,7 @@ class CountriesListFragment : Fragment() {
 
 
     private fun showList(countriesList: List<CountryResponse>) {
-        adapter.updateList(countriesList)
+        adapter.updateList(countriesList, context)
     }
 
     private fun onClickedCountry(name: String) {

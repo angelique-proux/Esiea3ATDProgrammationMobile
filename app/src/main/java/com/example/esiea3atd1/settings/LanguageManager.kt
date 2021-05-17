@@ -17,16 +17,16 @@ class LanguageManager {
         sharedPreferences = this.languageContext.getSharedPreferences("LANG", Context.MODE_PRIVATE)
     }
 
-    fun updateLanguageRessources(language: String) {
+    fun updateLanguageResources(language: String) {
         val locale = Locale(language)
         Locale.setDefault(locale)
 
-        val ressources: Resources = languageContext.resources
+        val resources: Resources = languageContext.resources
 
-        val config: Configuration = ressources.configuration
+        val config: Configuration = resources.configuration
         config.setLocale(locale)
 
-        ressources.updateConfiguration(config, ressources.displayMetrics)
+        resources.updateConfiguration(config, resources.displayMetrics)
         setLanguage(language)
     }
 
@@ -34,6 +34,10 @@ class LanguageManager {
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
         editor.putString("lang", code)
         editor.commit()
+    }
+
+    fun getLanguage(): String? {
+        return sharedPreferences.getString("lang", "en")
     }
 
 }

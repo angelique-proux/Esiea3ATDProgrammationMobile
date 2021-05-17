@@ -4,7 +4,6 @@ data class CountryResponse (
         val name: String,
         val capital: String,
         val region: String,
-        val subregion: String,
         val population: Int,
         val area: Float,
         val borders: List<String>,

@@ -43,9 +43,9 @@ class RegionListFragment : Fragment() {
         }
 
         //Get all regions to show them
-        val regionList : List<Region> = regionListAllLanguages.getRegionList()!!
+        val regionList : List<String> = regionListAllLanguages.getRegionList()!!
 
-        adapter.updateList(regionList)
+        adapter.updateList(regionList, resources)
 
     }
 

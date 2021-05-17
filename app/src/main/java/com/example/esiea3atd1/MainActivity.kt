@@ -82,11 +82,11 @@ class MainActivity : AppCompatActivity() {
     private fun setLanguageOfApp() {
         val sharedpreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
         if(sharedpreferences.getString("app_language", "fr").equals("fr")) {
-            langManager.updateLanguageRessources("fr")
+            langManager.updateLanguageResources("fr")
         } else if(sharedpreferences.getString("app_language", "fr").equals("de")){
-            langManager.updateLanguageRessources("de")
+            langManager.updateLanguageResources("de")
         } else {
-            langManager.updateLanguageRessources("en")
+            langManager.updateLanguageResources("en")
         }
     }
 

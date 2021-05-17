@@ -31,7 +31,7 @@
     <string name="user_name">My username</string>
 
     <!-- Location Preferences -->
-    <string name="location_region">My region</string>
+    <string name="location_region">My continent</string>
     <string name="location_country">Country\'s english name</string>
 
     <!-- Language Preferences -->
@@ -43,11 +43,30 @@
     <string name="theme_title">Application style</string>
 
 
-    <string name="all_regions">All regions</string>
+    <!-- Menu buttons -->
+    <string name="all_regions">All continents</string>
     <string name="my_country">My country</string>
     <string name="my_language_s_countries">Countries of my language</string>
-    <string name="application_s_informations">Application\'s informations</string>
-    <string name="my_region">My region</string>
+    <string name="application_s_information">Application\'s information</string>
+    <string name="my_region">My continent</string>
 
+
+    <!--Names of continents-->
+    <string name="French">French</string>
+    <string name="English">English</string>
+    <string name="Deutsch">Deutsch</string>
+    <string name="Africa">Africa</string>
+    <string name="Americas">Americas</string>
+    <string name="Asia">Asia</string>
+    <string name="Europe">Europe</string>
+    <string name="Oceania">Oceania</string>
+    <string name="Polar">Polar</string>
+
+
+    <string name="continent_text">Continent :</string>
+    <string name="borders_text">Border countries :</string>
+    <string name="NoBorders">There is no border country.</string>
+    <string name="NoCapital">There is no capital.</string>
+    <string name="enableWifi">Please activate your phone\'s wifi to access the information.</string>
 
 </resources>

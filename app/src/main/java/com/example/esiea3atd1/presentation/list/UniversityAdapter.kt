@@ -22,8 +22,8 @@ class UniversityAdapter (private var dataSet: List<UniversityResponse>, private 
 
         init {
             // Define click listener for the ViewHolder's View.
-            textView = view.findViewById(R.id.list_item_name)
-            imageView = view.findViewById(R.id.list_item_pic)
+            textView = view.findViewById(R.id.list_country_name)
+            imageView = view.findViewById(R.id.list_country_pic)
         }
 
     }
@@ -32,7 +32,7 @@ class UniversityAdapter (private var dataSet: List<UniversityResponse>, private 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
-                .inflate(R.layout.list_item, viewGroup, false)
+                .inflate(R.layout.list_countries, viewGroup, false)
 
         return ViewHolder(view)
     }

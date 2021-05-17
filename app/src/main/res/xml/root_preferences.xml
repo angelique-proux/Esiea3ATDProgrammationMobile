@@ -20,8 +20,8 @@
             app:key="region"
             app:title="@string/location_region"
             app:defaultValue="Europe"
-            app:entries="@array/region_entries"
-            app:entryValues="@array/region_values"
+            app:entries="@array/continents_entries"
+            app:entryValues="@array/continents_values"
             app:useSimpleSummaryProvider="true" />
 
         <EditTextPreference

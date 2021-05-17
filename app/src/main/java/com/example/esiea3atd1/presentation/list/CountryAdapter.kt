@@ -1,5 +1,7 @@
 package com.example.esiea3atd1.presentation.list
 
+import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,17 +10,20 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esiea3atd1.R
 import com.example.esiea3atd1.presentation.api.CountryResponse
+import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
 
 class CountryAdapter (private var dataSet: List<CountryResponse>, private var listener: ((String) -> Unit)? = null ) :
     RecyclerView.Adapter<CountryAdapter.ViewHolder>() {
+
+    private lateinit var context: Context
 
     /**
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder).
      */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView = view.findViewById(R.id.list_item_name)
-        val imageView: ImageView = view.findViewById(R.id.list_item_pic)
+        val textView: TextView = view.findViewById(R.id.list_country_name)
+        val imageView: ImageView = view.findViewById(R.id.list_country_pic)
 
     }
 
@@ -26,14 +31,15 @@ class CountryAdapter (private var dataSet: List<CountryResponse>, private var li
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.list_item, viewGroup, false)
+            .inflate(R.layout.list_countries, viewGroup, false)
 
         return ViewHolder(view)
     }
 
-    fun updateList(list: List<CountryResponse>){
+    fun updateList(list: List<CountryResponse>, cont: Context?){
         dataSet = list
         notifyDataSetChanged()
+        context = cont!!
     }
 
     // Replace the contents of a view (invoked by the layout manager)
@@ -47,8 +53,9 @@ class CountryAdapter (private var dataSet: List<CountryResponse>, private var li
             listener?.invoke(country.name)
         }
 
-        /*GlideToVectorYou
-                .justLoadImage(viewHolder.imageView.context as Activity?, Uri.parse(country.flag), viewHolder.imageView)*/
+        GlideToVectorYou.init().with(context).load(Uri.parse(country.flag),viewHolder.imageView)
+
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)

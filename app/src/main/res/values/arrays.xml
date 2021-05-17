@@ -1,9 +1,9 @@
 <resources>
     <!-- Language Preference -->
     <string-array name="language_titles">
-        <item>French</item>
-        <item>English</item>
-        <item>Deutsch</item>
+        <item>@string/French</item>
+        <item>@string/English</item>
+        <item>@string/Deutsch</item>
     </string-array>
 
     <string-array name="language_values">
@@ -13,16 +13,16 @@
     </string-array>
 
     <!-- Region Preference -->
-    <string-array name="region_entries">
-        <item>Afrique</item>
-        <item>Amériques</item>
-        <item>Asie</item>
-        <item>Europe</item>
-        <item>Océanie</item>
-        <item>Pôle</item>
+    <string-array name="continents_entries">
+        <item>@string/Africa</item>
+        <item>@string/Americas</item>
+        <item>@string/Asia</item>
+        <item>@string/Europe</item>
+        <item>@string/Oceania</item>
+        <item>@string/Polar</item>
     </string-array>
 
-    <string-array name="region_values">
+    <string-array name="continents_values">
         <item>Africa</item>
         <item>Americas</item>
         <item>Asia</item>
@@ -33,8 +33,8 @@
 
     <!-- Theme Preference -->
     <string-array name="theme_entries">
-        <item>Bright theme</item>
-        <item>Dark theme</item>
+        <item>Green style</item>
+        <item>Purple style</item>
     </string-array>
 
     <string-array name="theme_values">

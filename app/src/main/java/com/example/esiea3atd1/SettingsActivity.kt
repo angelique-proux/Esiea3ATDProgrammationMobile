@@ -1,14 +1,14 @@
 package com.example.esiea3atd1
 
+import android.annotation.SuppressLint
 import android.content.SharedPreferences
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
 import com.example.esiea3atd1.settings.LanguageManager
-import java.util.*
 
 class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -19,6 +19,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
         PreferenceManager.getDefaultSharedPreferences(baseContext)
             .registerOnSharedPreferenceChangeListener(this)
 
+        //Set theme and language of the application
         setThemeOfApp()
         setLanguageOfApp()
 
@@ -44,7 +45,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
 
     //Go back to the menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.getItemId()) {
+        when (item.itemId) {
             android.R.id.home -> {
                 super.onBackPressed()
                 return true
@@ -74,12 +75,16 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
     //Change language
     private fun setLanguageOfApp() {
         val sharedpreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
-        if(sharedpreferences.getString("app_language", "fr").equals("fr")) {
-            langManager.updateLanguageRessources("fr")
-        } else if(sharedpreferences.getString("app_language", "fr").equals("de")){
-            langManager.updateLanguageRessources("de")
-        } else {
-            langManager.updateLanguageRessources("en")
+        when {
+            sharedpreferences.getString("app_language", "fr").equals("fr") -> {
+                langManager.updateLanguageResources("fr")
+            }
+            sharedpreferences.getString("app_language", "fr").equals("de") -> {
+                langManager.updateLanguageResources("de")
+            }
+            else -> {
+                langManager.updateLanguageResources("en")
+            }
         }
     }
 }

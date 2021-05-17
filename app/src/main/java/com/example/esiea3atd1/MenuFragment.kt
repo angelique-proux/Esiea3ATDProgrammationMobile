@@ -23,7 +23,7 @@ class MenuFragment : Fragment() {
     private var PREF_USERNAME: String = "username"
     private var PREF_REGION : String = "region"
     private var PREF_COUNTRY : String = "country"
-    private var PREF_LANGUAGE : String = "mylanguage"
+    private var PREF_LANGUAGE : String = "my_language"
     //textView variables
     private lateinit var text_username: TextView
 
