@@ -18,6 +18,7 @@ import com.example.esiea3atd1.R
 import com.example.esiea3atd1.presentation.Singletons
 import com.example.esiea3atd1.presentation.api.CountryResponse
 import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
+import com.tapadoo.alerter.Alerter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -31,11 +32,15 @@ class CountryDetailFragment : Fragment() {
 
     private lateinit var textViewCapital: TextView
 
+    private lateinit var textViewLanguages: TextView
+
     private lateinit var textViewPopulation: TextView
 
     private lateinit var textViewArea: TextView
 
     private lateinit var textViewContinent: TextView
+
+    private lateinit var textViewCurrencies: TextView
 
     private lateinit var textViewBorders: TextView
 
@@ -63,9 +68,11 @@ class CountryDetailFragment : Fragment() {
 
         textViewName = view.findViewById(R.id.country_detail_name)
         textViewCapital = view.findViewById(R.id.country_detail_capital_text)
+        textViewLanguages = view.findViewById(R.id.country_detail_languages_text)
         textViewPopulation = view.findViewById(R.id.country_detail_population_text)
         textViewArea = view.findViewById(R.id.country_detail_area_text)
         textViewContinent = view.findViewById(R.id.country_detail_continent_text)
+        textViewCurrencies = view.findViewById(R.id.country_detail_currencies_text)
         textViewBorders = view.findViewById(R.id.country_detail_borders_text)
         imageViewFlag = view.findViewById(R.id.country_detail_flag)
 
@@ -76,25 +83,35 @@ class CountryDetailFragment : Fragment() {
     private fun callApi() {
         val countryName: String = arguments?.getString("countryName")!!
         Singletons.countriesApi.getSpecificCountry(countryName).enqueue(object: Callback<List<CountryResponse>> {
-            @SuppressLint("WrongConstant")
             override fun onFailure(call: Call<List<CountryResponse>>, t: Throwable) {
-                Toast.makeText(context, resources.getString(R.string.enableWifi), 300)
+                Alerter.Companion.create(activity!!)
+                    .setTitle(R.string.Notification)
+                    .setText(R.string.enableWifi)
+                    .setIcon(R.drawable.ic_baseline_flight_24)
+                    .setBackgroundColorRes(R.color.green1)
+                    .setDuration(4000)
+                    .setOnClickListener {
+                        Toast.makeText(context, R.string.enableWifi, Toast.LENGTH_SHORT).show()
+                    }
+                    .show()
             }
+            @SuppressLint("SetTextI18n")
             override fun onResponse(
                     call: Call<List<CountryResponse>>,
                     response: Response<List<CountryResponse>>
             ) {
                 if(response.isSuccessful && response.body() != null){
-                    textViewName.text = response.body()!![0].name
+                    textViewName.text = response.body()!![0].nativeName
                     textViewCapital.text = response.body()!![0].capital
                     textViewPopulation.text = response.body()!![0].population.toString()
                     textViewArea.text = response.body()!![0].area.toString()
                     textViewContinent.text = response.body()!![0].region
+                    textViewCurrencies.text = response.body()!![0].currencies[0].name + " " + response.body()!![0].currencies[0].symbol
 
                     if (response.body()!![0].borders.isNotEmpty()) {
                         var bordersCountries = ""
                         for (i in response.body()!![0].borders.indices) {
-                            bordersCountries += response.body()!![0].borders[i] + " ; "
+                            bordersCountries += response.body()!![0].borders[i] + " "
                             if(i%4==3) {
                                 bordersCountries += "\n"
                             }
@@ -104,8 +121,21 @@ class CountryDetailFragment : Fragment() {
                         textViewBorders.text = resources.getString(R.string.NoBorders)
                     }
 
-                    if (response.body()!![0].name.isEmpty()) {
-                        textViewName.text = resources.getString(R.string.NoCapital)
+                    if (response.body()!![0].languages.isNotEmpty()) {
+                        var languagesNames = ""
+                        for (i in response.body()!![0].languages.indices) {
+                            languagesNames += response.body()!![0].languages[i].nativeName + " "
+                            if(i%2==1 && i != response.body()!![0].languages.size-1) {
+                                languagesNames += "\n"
+                            }
+                        }
+                        textViewLanguages.text = languagesNames
+                    } else {
+                        textViewLanguages.text = resources.getString(R.string.NoLanguages)
+                    }
+
+                    if (response.body()!![0].capital.isEmpty()) {
+                        textViewCapital.text = resources.getString(R.string.NoCapital)
                     }
 
                     GlideToVectorYou.init().with(context).load(Uri.parse(response.body()!![0].flag),imageViewFlag)

@@ -7,15 +7,11 @@ import android.content.res.Resources
 import java.util.*
 
 @Suppress("DEPRECATION")
-class LanguageManager {
+class LanguageManager(context: Context) {
 
-    private var languageContext: Context
-    private var sharedPreferences: SharedPreferences
-
-    constructor(context: Context) {
-        languageContext = context
-        sharedPreferences = this.languageContext.getSharedPreferences("LANG", Context.MODE_PRIVATE)
-    }
+    private var languageContext: Context = context
+    private var sharedPreferences: SharedPreferences =
+        this.languageContext.getSharedPreferences("LANG", Context.MODE_PRIVATE)
 
     fun updateLanguageResources(language: String) {
         val locale = Locale(language)
@@ -30,14 +26,10 @@ class LanguageManager {
         setLanguage(language)
     }
 
-    fun setLanguage(code: String) {
+    private fun setLanguage(code: String) {
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
         editor.putString("lang", code)
-        editor.commit()
-    }
-
-    fun getLanguage(): String? {
-        return sharedPreferences.getString("lang", "en")
+        editor.apply()
     }
 
 }

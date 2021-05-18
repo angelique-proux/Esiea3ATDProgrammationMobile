@@ -13,8 +13,8 @@ import com.tapadoo.alerter.Alerter
 
 class MainActivity : AppCompatActivity() {
 
-    private var SETTINGS_CODE = 243
-    private lateinit var sharedpreferences: SharedPreferences
+    private var settingsCode = 243
+    private lateinit var sharedPreferences: SharedPreferences
     private lateinit var langManager: LanguageManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,18 +40,18 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_settings -> {
                 val intent = Intent(this, SettingsActivity::class.java)
-                startActivityForResult(intent, SETTINGS_CODE)
+                startActivityForResult(intent, settingsCode)
                 true
             }
             R.id.action_notifications -> {
                 Alerter.Companion.create(this)
-                    .setTitle("Notification")
-                    .setText("Hey you!")
+                    .setTitle(R.string.Notification)
+                    .setText(R.string.tryNotification)
                     .setIcon(R.drawable.ic_baseline_flight_24)
                     .setBackgroundColorRes(R.color.green1)
                     .setDuration(5000)
                     .setOnClickListener {
-                        Toast.makeText(this, "Notification!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, R.string.tryNotification, Toast.LENGTH_SHORT).show()
                     }
                     .show()
                 true
@@ -62,8 +62,8 @@ class MainActivity : AppCompatActivity() {
 
     //Change theme
     private fun setThemeOfApp() {
-        sharedpreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
-        if(sharedpreferences.getString("theme_choice", "BRIGHT").equals("BRIGHT")) {
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
+        if(sharedPreferences.getString("theme_choice", "BRIGHT").equals("BRIGHT")) {
             setTheme(R.style.BrightTheme)
         } else {
             setTheme(R.style.DarkTheme)
@@ -73,20 +73,24 @@ class MainActivity : AppCompatActivity() {
     //Recreate Activity if the theme has changed
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode==SETTINGS_CODE) {
+        if(requestCode==settingsCode) {
             this.recreate()
         }
     }
 
     //Change language
     private fun setLanguageOfApp() {
-        val sharedpreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
-        if(sharedpreferences.getString("app_language", "fr").equals("fr")) {
-            langManager.updateLanguageResources("fr")
-        } else if(sharedpreferences.getString("app_language", "fr").equals("de")){
-            langManager.updateLanguageResources("de")
-        } else {
-            langManager.updateLanguageResources("en")
+        val sharedPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
+        when {
+            sharedPreferences.getString("app_language", "fr").equals("fr") -> {
+                langManager.updateLanguageResources("fr")
+            }
+            sharedPreferences.getString("app_language", "fr").equals("de") -> {
+                langManager.updateLanguageResources("de")
+            }
+            else -> {
+                langManager.updateLanguageResources("en")
+            }
         }
     }
 

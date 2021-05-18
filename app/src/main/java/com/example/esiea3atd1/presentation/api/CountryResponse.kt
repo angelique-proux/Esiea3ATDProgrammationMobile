@@ -2,6 +2,7 @@ package com.example.esiea3atd1.presentation.api
 
 data class CountryResponse (
         val name: String,
+        val nativeName: String,
         val capital: String,
         val region: String,
         val population: Int,
@@ -13,7 +14,7 @@ data class CountryResponse (
 )
 
 data class Languages (
-        val name: String
+        val nativeName: String
 )
 
 data class Currencies (

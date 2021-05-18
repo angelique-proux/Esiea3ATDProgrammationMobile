@@ -78,12 +78,15 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
         when {
             sharedpreferences.getString("app_language", "fr").equals("fr") -> {
                 langManager.updateLanguageResources("fr")
+                this.title = resources.getString(R.string.title_activity_settings)
             }
             sharedpreferences.getString("app_language", "fr").equals("de") -> {
                 langManager.updateLanguageResources("de")
+                this.title = resources.getString(R.string.title_activity_settings)
             }
             else -> {
                 langManager.updateLanguageResources("en")
+                this.title = resources.getString(R.string.title_activity_settings)
             }
         }
     }

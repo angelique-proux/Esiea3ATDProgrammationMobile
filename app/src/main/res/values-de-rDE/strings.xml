@@ -38,4 +38,10 @@
     <string name="NoBorders">Es gibt kein Grenzland.</string>
     <string name="NoCapital">Es gibt kein Hauptstadt.</string>
     <string name="enableWifi">Bitte aktivieren Sie das WLAN Ihres Telefons, um auf die Informationen zuzugreifen.</string>
+    <string name="tryNotification">Um Benachrichtigungen zu sehen, deaktivieren Sie WLAN.</string>
+    <string name="welcome">Willkommen bei dieser Anwendung,</string>
+    <string name="Notification">Benachrichtigung</string>
+    <string name="NoLanguages">Es gibt keine Sprachen.</string>
+    <string name="language_text">Sprachen :</string>
+    <string name="currencies_text">Währungen :</string>
 </resources>

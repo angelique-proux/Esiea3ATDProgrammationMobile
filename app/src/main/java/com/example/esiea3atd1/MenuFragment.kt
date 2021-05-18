@@ -18,14 +18,14 @@ import androidx.preference.PreferenceManager
  */
 class MenuFragment : Fragment() {
 
-    private lateinit var sharedpreferences: SharedPreferences
+    private lateinit var sharedPreferences: SharedPreferences
     //keys from settings xml
-    private var PREF_USERNAME: String = "username"
-    private var PREF_REGION : String = "region"
-    private var PREF_COUNTRY : String = "country"
-    private var PREF_LANGUAGE : String = "my_language"
+    private var prefUserName: String = "username"
+    private var prefRegion : String = "region"
+    private var prefCountry : String = "country"
+    private var prefLanguage : String = "my_language"
     //textView variables
-    private lateinit var text_username: TextView
+    private lateinit var textWelcome: TextView
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +39,7 @@ class MenuFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         PreferenceManager.setDefaultValues(context, R.xml.root_preferences, false)
-        text_username = requireView().findViewById(R.id.menu_text)
+        textWelcome = requireView().findViewById(R.id.menu_text)
         readSettings()
 
         view.findViewById<Button>(R.id.region_button).setOnClickListener {
@@ -48,19 +48,19 @@ class MenuFragment : Fragment() {
 
         view.findViewById<Button>(R.id.countries_button).setOnClickListener {
             findNavController().navigate(R.id.NavigateToMyRegion, bundleOf(
-                "regionName" to sharedpreferences.getString(PREF_REGION, "Europe")
+                "regionName" to sharedPreferences.getString(prefRegion, "Europe")
             ))
         }
 
         view.findViewById<Button>(R.id.country_button).setOnClickListener {
             findNavController().navigate(R.id.NavigateToMyCountry, bundleOf(
-                "countryName" to sharedpreferences.getString(PREF_COUNTRY, "France")
+                "countryName" to sharedPreferences.getString(prefCountry, "France")
             ))
         }
 
         view.findViewById<Button>(R.id.language_button).setOnClickListener {
             findNavController().navigate(R.id.NavigateToMyRegion, bundleOf(
-                "languageName" to sharedpreferences.getString(PREF_LANGUAGE, "fr")
+                "languageName" to sharedPreferences.getString(prefLanguage, "fr")
             ))
         }
 
@@ -69,8 +69,8 @@ class MenuFragment : Fragment() {
     //Read Settings from SettingsActivity
     @SuppressLint("SetTextI18n")
     private fun readSettings() {
-        sharedpreferences = PreferenceManager.getDefaultSharedPreferences(context)
-        text_username.text = "Bienvenue " + sharedpreferences.getString(PREF_USERNAME, "")
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+        textWelcome.text = resources.getString(R.string.welcome) + " " + sharedPreferences.getString(prefUserName, "")
     }
 
 }

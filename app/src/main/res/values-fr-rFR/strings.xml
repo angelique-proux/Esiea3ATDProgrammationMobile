@@ -38,4 +38,10 @@
     <string name="NoBorders">Il n\'y a pas de pays frontalier.</string>
     <string name="NoCapital">Il n\'y a pas de capitale.</string>
     <string name="enableWifi">Veuillez activer le wifi de votre téléphone pour accéder aux informations.</string>
+    <string name="tryNotification">Pour voir les notifications, désactivez le wifi.</string>
+    <string name="welcome">Bienvenue sur cette application,</string>
+    <string name="Notification">Notification</string>
+    <string name="NoLanguages">Il n\'y a pas de langues.</string>
+    <string name="language_text">Langues :</string>
+    <string name="currencies_text">Monnaies :</string>
 </resources>
