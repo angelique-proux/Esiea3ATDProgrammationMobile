@@ -46,4 +46,12 @@
     <string name="currencies_text">Monnaies :</string>
     <string name="greenStyle">Thème vert</string>
     <string name="purpleStyle">Thème violet</string>
+    <string name="name_app_text">Nom de l\'application : UniversCité</string>
+    <string name="author_app_text">Créatrice : Angélique P.</string>
+    <string name="date_app_text">Date de la dernière version : 23/05/2021</string>
+    <string name="version_app_text">Version : 1.0</string>
+    <string name="objective_app_text">Objectif de l\'application : \"Aider les étudiants à trouver des universités dans le monde entier.\"</string>
+    <string name="languages_app_text">Langues supportées : Français, Anglais et Allemand.</string>
+    <string name="api_app_text">Api utilisée : https://restcountries.eu/</string>
+    <string name="github_app_text">Lien vers le github :</string>
 </resources>

@@ -8,20 +8,27 @@
     <string name="third_fragment_label" translatable="false">Third Fragment</string>
     <string name="fourth_fragment_label" translatable="false">Fourth Fragment</string>
     <string name="menu_fragment_label" translatable="false">Menu Fragment</string>
+    <string name="info_fragment_label" translatable="false">Information Fragment</string>
 
     <!-- Buttons -->
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
     <!-- Country Fragment -->
-    <string name="capital_text">Capital :</string>
-    <string name="population_text">Population :</string>
-    <string name="area_text">Area :</string>
+    <string name="capital_text">Capital:</string>
+    <string name="population_text">Population:</string>
+    <string name="area_text">Area:</string>
     <string name="universities_list">UniversitiesList</string>
-
-    <string name="title_activity_settings">Application settings</string>
+    <string name="continent_text">Continent:</string>
+    <string name="borders_text">Border countries:</string>
+    <string name="currencies_text">Currencies:</string>
+    <string name="language_text">Languages:</string>
+    <string name="NoBorders">There is no border country.</string>
+    <string name="NoCapital">There is no capital.</string>
+    <string name="NoLanguages">There is no languages.</string>
 
     <!-- Preference Titles -->
+    <string name="title_activity_settings">Application settings</string>
     <string name="location_header">Location</string>
     <string name="language_header">Language</string>
     <string name="themes_header">Style</string>
@@ -39,19 +46,17 @@
     <string name="language_app">Application language</string>
 
     <!-- Theme Preferences -->
-
     <string name="theme_title">Application style</string>
     <string name="greenStyle">Green style</string>
     <string name="purpleStyle">Purple style</string>
 
-
-    <!-- Menu buttons -->
+    <!-- Menu -->
+    <string name="welcome">Welcome to this application,</string>
     <string name="all_regions">All continents</string>
     <string name="my_country">My country</string>
     <string name="my_language_s_countries">Country of the language studied</string>
     <string name="application_s_information">Application\'s information</string>
     <string name="my_region">My continent</string>
-
 
     <!--Names of continents-->
     <string name="French">French</string>
@@ -64,17 +69,19 @@
     <string name="Oceania">Oceania</string>
     <string name="Polar">Polar</string>
 
-
-    <string name="continent_text">Continent :</string>
-    <string name="borders_text">Border countries :</string>
-    <string name="NoBorders">There is no border country.</string>
-    <string name="NoCapital">There is no capital.</string>
-    <string name="enableWifi">Please activate your phone\'s wifi to access the information.</string>
-    <string name="currencies_text">Currencies :</string>
-    <string name="language_text">Languages :</string>
-    <string name="NoLanguages">There is no languages.</string>
+    <!-- Notifications -->
     <string name="Notification">Notification</string>
     <string name="tryNotification">To see notifications, disable wifi.</string>
-    <string name="welcome">Welcome to this application,</string>
+    <string name="enableWifi">Please activate your phone\'s wifi to access the information.</string>
+
+    <!-- Information fragment -->
+    <string name="name_app_text">Name of the application: UniversCité</string>
+    <string name="author_app_text">Creator: Angélique P.</string>
+    <string name="date_app_text">Date of the last version: 23/05/2021</string>
+    <string name="version_app_text">Version: 1.0</string>
+    <string name="objective_app_text">Objective of the application: \"To help students find universities all over the world.</string>
+    <string name="languages_app_text">Supported languages: English, French and German.</string>
+    <string name="api_app_text">Api used: https://restcountries.eu/</string>
+    <string name="github_app_text">Link to the github:</string>
 
 </resources>

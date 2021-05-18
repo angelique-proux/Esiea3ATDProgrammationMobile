@@ -64,6 +64,10 @@ class MenuFragment : Fragment() {
             ))
         }
 
+        view.findViewById<Button>(R.id.info_button).setOnClickListener {
+            findNavController().navigate(R.id.NavigateToInformation)
+        }
+
     }
 
     //Read Settings from SettingsActivity

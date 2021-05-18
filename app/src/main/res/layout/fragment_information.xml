@@ -1,14 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="244dp"
-        android:layout_height="47dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="142dp" />
+        android:id="@+id/nameApp"
+        android:layout_width="278dp"
+        android:layout_height="22dp"
+        android:fontFamily="serif"
+        android:text="@string/name_app_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.173" />
+
+    <TextView
+        android:id="@+id/authorApp"
+        android:layout_width="278dp"
+        android:layout_height="22dp"
+        android:fontFamily="serif"
+        android:text="@string/author_app_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.231" />
+
+    <TextView
+        android:id="@+id/dateApp"
+        android:layout_width="278dp"
+        android:layout_height="22dp"
+        android:fontFamily="serif"
+        android:text="@string/date_app_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.294" />
+
+    <TextView
+        android:id="@+id/versionApp"
+        android:layout_width="278dp"
+        android:layout_height="22dp"
+        android:fontFamily="serif"
+        android:text="@string/version_app_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateApp"
+        app:layout_constraintVertical_bias="0.039" />
+
+    <TextView
+        android:id="@+id/objectiveApp"
+        android:layout_width="278dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="19dp"
+        android:fontFamily="serif"
+        android:text="@string/objective_app_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/versionApp"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/languagesApp"
+        android:layout_width="278dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="serif"
+        android:text="@string/languages_app_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/objectiveApp"
+        app:layout_constraintVertical_bias="0.003" />
+
+    <TextView
+        android:id="@+id/apiApp"
+        android:layout_width="278dp"
+        android:layout_height="22dp"
+        android:fontFamily="serif"
+        android:text="@string/api_app_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/languagesApp"
+        app:layout_constraintVertical_bias="0.064" />
+
+    <TextView
+        android:id="@+id/githubApp"
+        android:layout_width="278dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="19dp"
+        android:fontFamily="serif"
+        android:text="@string/github_app_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apiApp"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/imageButtonApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.835"
+        app:srcCompat="@drawable/abc_vector_test" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

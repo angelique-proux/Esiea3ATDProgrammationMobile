@@ -20,6 +20,9 @@
         <action
             android:id="@+id/NavigateToMyCountry"
             app:destination="@id/DetailCountryFragment" />
+        <action
+            android:id="@+id/NavigateToInformation"
+            app:destination="@id/InformationFragment" />
     </fragment>
 
     <fragment
@@ -81,6 +84,17 @@
         <action
             android:id="@+id/NavigateToRegionList2"
             app:destination="@id/RegionListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/InformationFragment"
+        android:name="com.example.esiea3atd1.InformationFragment"
+        android:label="@string/info_fragment_label"
+        tools:layout="@layout/fragment_information">
+
+    <action
+        android:id="@+id/NavigateToMenu0"
+        app:destination="@id/MenuFragment" />
     </fragment>
 
 </navigation>
