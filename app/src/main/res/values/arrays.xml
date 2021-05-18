@@ -1,12 +1,60 @@
 <resources>
     <!-- Language Preference -->
     <string-array name="language_titles">
+        <item>Afrikaans</item>
+        <item>العربية</item>
+        <item>Deutsch</item>
+        <item>ελληνικά</item>
+        <item>English</item>
+        <item>Español</item>
+        <item>Français</item>
+        <item>हिन्दी</item>
+        <item>Hrvatski jezik</item>
+        <item>Հայերեն</item>
+        <item>Italiano</item>
+        <item>한국어</item>
+        <item>Nederlands</item>
+        <item>Norsk</item>
+        <item>Português</item>
+        <item>Русский</item>
+        <item>Slovenčina</item>
+        <item>српски језик</item>
+        <item>Svenska</item>
+        <item>Kiswahili</item>
+        <item>中文 (Zhōngwén)</item>
+    </string-array>
+
+    <string-array name="language_values">
+        <item>af</item>
+        <item>ar</item>
+        <item>de</item>
+        <item>el</item>
+        <item>en</item>
+        <item>es</item>
+        <item>fr</item>
+        <item>hi</item>
+        <item>hr</item>
+        <item>hy</item>
+        <item>it</item>
+        <item>ko</item>
+        <item>nl</item>
+        <item>no</item>
+        <item>pt</item>
+        <item>ru</item>
+        <item>sk</item>
+        <item>sr</item>
+        <item>sv</item>
+        <item>sw</item>
+        <item>zh</item>
+    </string-array>
+
+    <string-array name="language_app_titles">
         <item>@string/French</item>
         <item>@string/English</item>
         <item>@string/Deutsch</item>
     </string-array>
 
-    <string-array name="language_values">
+    <string-array name="language_app_values">
         <item>fr</item>
         <item>en</item>
         <item>de</item>
@@ -31,14 +79,88 @@
         <item>Polar</item>
     </string-array>
 
+
+    <!-- Country -->
+    <string-array name="countries_entries">
+        <item>الجزائر</item>
+        <item>Argentina</item>
+        <item>Australia</item>
+        <item>Österreich</item>
+        <item>België</item>
+        <item>Brasil</item>
+        <item>България</item>
+        <item>Canada</item>
+        <item>中国</item>
+        <item>مصر‎</item>
+        <item>France</item>
+        <item>Ελλάδα</item>
+        <item>Deutschland</item>
+        <item>भारत</item>
+        <item>Éire</item>
+        <item>Italia</item>
+        <item>日本</item>
+        <item>대한민국</item>
+        <item>Malaysia</item>
+        <item>México</item>
+        <item>Nederland</item>
+        <item>Pilipinas</item>
+        <item>Polska</item>
+        <item>Россия</item>
+        <item>Sénégal</item>
+        <item>Singapore</item>
+        <item>South Africa</item>
+        <item>España</item>
+        <item>ประเทศไทย</item>
+        <item>United Kingdom</item>
+        <item>United States</item>
+        <item>Việt Nam</item>
+    </string-array>
+
+    <string-array name="countries_values">
+        <item>Algeria</item>
+        <item>Argentina</item>
+        <item>Australia</item>
+        <item>Austria</item>
+        <item>Belgium</item>
+        <item>Brazil</item>
+        <item>Bulgaria</item>
+        <item>Canada</item>
+        <item>China</item>
+        <item>Egypt</item>
+        <item>France</item>
+        <item>Greece</item>
+        <item>Germany</item>
+        <item>India</item>
+        <item>Ireland</item>
+        <item>Italy</item>
+        <item>Japan</item>
+        <item>Korea (Republic of)</item>
+        <item>Malaysia</item>
+        <item>Mexico</item>
+        <item>Netherlands</item>
+        <item>Philippines</item>
+        <item>Poland</item>
+        <item>Russian Federation</item>
+        <item>Senegal</item>
+        <item>Singapore</item>
+        <item>South Africa</item>
+        <item>Spain</item>
+        <item>Thailand</item>
+        <item>United Kingdom of Great Britain and Northern Ireland</item>
+        <item>United States of America</item>
+        <item>Viet Nam</item>
+    </string-array>
+
+
     <!-- Theme Preference -->
     <string-array name="theme_entries">
-        <item>Green style</item>
-        <item>Purple style</item>
+        <item>@string/greenStyle</item>
+        <item>@string/purpleStyle</item>
     </string-array>
 
     <string-array name="theme_values">
         <item>BRIGHT</item>
         <item>DARK</item>
     </string-array>
+
 </resources>

@@ -24,10 +24,12 @@
             app:entryValues="@array/continents_values"
             app:useSimpleSummaryProvider="true" />
 
-        <EditTextPreference
+        <ListPreference
             app:defaultValue="France"
             app:key="country"
             app:title="@string/location_country"
+            app:entries="@array/countries_entries"
+            app:entryValues="@array/countries_values"
             app:useSimpleSummaryProvider="true" />
 
     </PreferenceCategory>
@@ -36,16 +38,18 @@
         app:icon="@drawable/ic_baseline_language_24"
         app:title="@string/language_header">
 
-        <EditTextPreference
+        <ListPreference
             app:key="my_language"
             app:defaultValue="fr"
             app:title="@string/language_title"
+            app:entries="@array/language_titles"
+            app:entryValues="@array/language_values"
             app:useSimpleSummaryProvider="true" />
 
         <ListPreference
             app:defaultValue="fr"
-            app:entries="@array/language_titles"
-            app:entryValues="@array/language_values"
+            app:entries="@array/language_app_titles"
+            app:entryValues="@array/language_app_values"
             app:key="app_language"
             app:title="@string/language_app"
             app:useSimpleSummaryProvider="true" />

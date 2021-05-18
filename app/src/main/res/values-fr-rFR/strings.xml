@@ -15,14 +15,14 @@
     <string name="title_activity_settings">Paramètres de l\'application</string>
     <string name="user_name">Mon nom d\'utilisateur</string>
     <string name="location_region">Mon continent</string>
-    <string name="location_country">Mon pays (en anglais)</string>
-    <string name="language_title">Ma langue (2 premières lettres)</string>
+    <string name="location_country">Mon pays</string>
+    <string name="language_title">Langue étudiée</string>
     <string name="language_app">Langue de l\'application</string>
     <string name="theme_title">Style de l\'application</string>
     <string name="all_regions">Tous les continents</string>
     <string name="my_country">Mon pays</string>
     <string name="my_region">Mon continent</string>
-    <string name="my_language_s_countries">Pays de ma langue</string>
+    <string name="my_language_s_countries">Pays de la langue étudiée</string>
     <string name="application_s_information">Informations sur l\'application</string>
     <string name="Europe">Europe</string>
     <string name="French">Français</string>
@@ -44,4 +44,6 @@
     <string name="NoLanguages">Il n\'y a pas de langues.</string>
     <string name="language_text">Langues :</string>
     <string name="currencies_text">Monnaies :</string>
+    <string name="greenStyle">Thème vert</string>
+    <string name="purpleStyle">Thème violet</string>
 </resources>

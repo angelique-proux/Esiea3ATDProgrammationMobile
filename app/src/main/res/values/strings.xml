@@ -24,7 +24,7 @@
     <!-- Preference Titles -->
     <string name="location_header">Location</string>
     <string name="language_header">Language</string>
-    <string name="themes_header">Theme</string>
+    <string name="themes_header">Style</string>
     <string name="user_header">Name</string>
 
     <!-- User Preferences -->
@@ -32,21 +32,23 @@
 
     <!-- Location Preferences -->
     <string name="location_region">My continent</string>
-    <string name="location_country">Country\'s english name</string>
+    <string name="location_country">Country\'s name</string>
 
     <!-- Language Preferences -->
-    <string name="language_title">My language two first letters</string>
+    <string name="language_title">Language studied</string>
     <string name="language_app">Application language</string>
 
     <!-- Theme Preferences -->
 
     <string name="theme_title">Application style</string>
+    <string name="greenStyle">Green style</string>
+    <string name="purpleStyle">Purple style</string>
 
 
     <!-- Menu buttons -->
     <string name="all_regions">All continents</string>
     <string name="my_country">My country</string>
-    <string name="my_language_s_countries">Countries of my language</string>
+    <string name="my_language_s_countries">Country of the language studied</string>
     <string name="application_s_information">Application\'s information</string>
     <string name="my_region">My continent</string>
 
@@ -73,6 +75,6 @@
     <string name="NoLanguages">There is no languages.</string>
     <string name="Notification">Notification</string>
     <string name="tryNotification">To see notifications, disable wifi.</string>
-    <string name="welcome">Welcome</string>
+    <string name="welcome">Welcome to this application,</string>
 
 </resources>
