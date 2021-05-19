@@ -11,8 +11,7 @@
     <string name="info_fragment_label" translatable="false">Information Fragment</string>
 
     <!-- Buttons -->
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="back_to_menu">Back to the menu</string>
 
     <!-- Country Fragment -->
     <string name="capital_text">Capital:</string>

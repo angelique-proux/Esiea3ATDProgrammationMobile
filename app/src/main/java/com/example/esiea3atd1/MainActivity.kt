@@ -7,6 +7,9 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.preference.PreferenceManager
 import com.example.esiea3atd1.settings.LanguageManager
 import com.tapadoo.alerter.Alerter
@@ -24,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         setLanguageOfApp()
         setThemeOfApp()
         setContentView(R.layout.activity_main)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -57,7 +57,7 @@ class CountryDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.button_second).setOnClickListener {
+        view.findViewById<Button>(R.id.menu_button).setOnClickListener {
             findNavController().navigate(R.id.NavigateToMenu)
         }
         view.findViewById<Button>(R.id.universities_button).setOnClickListener{

@@ -1,13 +1,14 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
         app:icon="@drawable/ic_baseline_person_24"
         app:title="@string/user_header">
 
         <EditTextPreference
+            app:defaultValue="UserName"
             app:key="username"
             app:title="@string/user_name"
-            app:defaultValue=""
             app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
 
@@ -17,11 +18,11 @@
         app:title="@string/location_header">
 
         <ListPreference
-            app:key="region"
-            app:title="@string/location_region"
             app:defaultValue="Europe"
             app:entries="@array/continents_entries"
             app:entryValues="@array/continents_values"
+            app:key="region"
+            app:title="@string/location_region"
             app:useSimpleSummaryProvider="true" />
 
         <ListPreference

@@ -1,10 +1,8 @@
 package com.example.esiea3atd1
 
-import android.annotation.SuppressLint
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
@@ -56,8 +54,8 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
 
     //Change theme
     private fun setThemeOfApp() {
-        val sharedpreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
-        if(sharedpreferences.getString("theme_choice", "BRIGHT").equals("BRIGHT")) {
+        val sharedPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
+        if(sharedPreferences.getString("theme_choice", "BRIGHT").equals("BRIGHT")) {
             setTheme(R.style.BrightTheme)
         } else {
             setTheme(R.style.DarkTheme)
@@ -74,13 +72,13 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
 
     //Change language
     private fun setLanguageOfApp() {
-        val sharedpreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
+        val sharedPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
         when {
-            sharedpreferences.getString("app_language", "fr").equals("fr") -> {
+            sharedPreferences.getString("app_language", "fr").equals("fr") -> {
                 langManager.updateLanguageResources("fr")
                 this.title = resources.getString(R.string.title_activity_settings)
             }
-            sharedpreferences.getString("app_language", "fr").equals("de") -> {
+            sharedPreferences.getString("app_language", "fr").equals("de") -> {
                 langManager.updateLanguageResources("de")
                 this.title = resources.getString(R.string.title_activity_settings)
             }

@@ -2,8 +2,7 @@
 <resources>
     <string name="app_name">UniversCité</string>
     <string name="action_settings">Paramètres</string>
-    <string name="next">Suivant</string>
-    <string name="previous">Précédent</string>
+    <string name="back_to_menu">Retour au menu</string>
     <string name="capital_text">Capitale :</string>
     <string name="population_text">Population :</string>
     <string name="area_text">Superficie :</string>
