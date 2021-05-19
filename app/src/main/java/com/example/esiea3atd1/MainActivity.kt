@@ -7,9 +7,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.preference.PreferenceManager
 import com.example.esiea3atd1.settings.LanguageManager
 import com.tapadoo.alerter.Alerter
@@ -36,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -52,8 +50,8 @@ class MainActivity : AppCompatActivity() {
                     .setTitle(R.string.Notification)
                     .setText(R.string.tryNotification)
                     .setIcon(R.drawable.ic_baseline_flight_24)
-                    .setBackgroundColorRes(R.color.green1)
-                    .setDuration(5000)
+                    .setBackgroundColorRes(R.color.notifications)
+                    .setDuration(2000)
                     .setOnClickListener {
                         Toast.makeText(this, R.string.tryNotification, Toast.LENGTH_SHORT).show()
                     }

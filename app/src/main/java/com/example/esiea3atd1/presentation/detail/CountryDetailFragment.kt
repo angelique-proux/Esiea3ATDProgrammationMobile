@@ -88,8 +88,8 @@ class CountryDetailFragment : Fragment() {
                     .setTitle(R.string.Notification)
                     .setText(R.string.enableWifi)
                     .setIcon(R.drawable.ic_baseline_flight_24)
-                    .setBackgroundColorRes(R.color.green1)
-                    .setDuration(4000)
+                    .setBackgroundColorRes(R.color.notifications)
+                    .setDuration(3000)
                     .setOnClickListener {
                         Toast.makeText(context, R.string.enableWifi, Toast.LENGTH_SHORT).show()
                     }

@@ -47,7 +47,7 @@
     <!-- Theme Preferences -->
     <string name="theme_title">Application style</string>
     <string name="greenStyle">Green style</string>
-    <string name="purpleStyle">Purple style</string>
+    <string name="purpleStyle">Red style</string>
 
     <!-- Menu -->
     <string name="welcome">Welcome to this application,</string>

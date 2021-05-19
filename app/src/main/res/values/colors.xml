@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="green1">#729179</color>
-    <color name="green2">#2F574D</color>
-    <color name="blue1">#4C767A</color>
-    <color name="blue2">#6B979C</color>
-    <color name="blue3">#C4F0FF</color>
-
-    <color name="green1dark">#91727C</color>
-    <color name="green2dark">#572F44</color>
-    <color name="blue1dark">#7A4C5B</color>
-    <color name="blue2dark">#856B9C</color>
-    <color name="blue3dark">#D9ABFB</color>
-
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="red">#C8B5A0AF</color>
+    <color name="red1">#EED7C5</color>
+    <color name="red2">#F3CD99BA</color>
+    <color name="red3">#D38A4C33</color>
+    <color name="red4">#FA83455A</color>
+
+    <color name="green">#C8C2CABD</color>
+    <color name="green1">#849B9E</color>
+    <color name="green2">#939782</color>
+    <color name="green3">#557878</color>
+    <color name="green4">#EB3D6862</color>
+
+    <color name="notifications">#6C6D85</color>
 </resources>
