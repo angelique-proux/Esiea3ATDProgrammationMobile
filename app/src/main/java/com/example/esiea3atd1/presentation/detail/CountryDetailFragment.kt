@@ -85,10 +85,10 @@ class CountryDetailFragment : Fragment() {
         Singletons.countriesApi.getSpecificCountry(countryName).enqueue(object: Callback<List<CountryResponse>> {
             override fun onFailure(call: Call<List<CountryResponse>>, t: Throwable) {
                 Alerter.Companion.create(activity!!)
-                    .setTitle(R.string.Notification)
+                    .setTitle(R.string.pop_messages)
                     .setText(R.string.enableWifi)
                     .setIcon(R.drawable.ic_baseline_flight_24)
-                    .setBackgroundColorRes(R.color.notifications)
+                    .setBackgroundColorRes(R.color.alertes)
                     .setDuration(3000)
                     .setOnClickListener {
                         Toast.makeText(context, R.string.enableWifi, Toast.LENGTH_SHORT).show()

@@ -11,8 +11,8 @@
     <!-- Title -->
     <ImageView
         android:id="@+id/country_detail_flag"
-        android:layout_width="150dp"
         android:layout_height="100dp"
+        android:layout_width="150dp"
         android:contentDescription="CountryFlag"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"

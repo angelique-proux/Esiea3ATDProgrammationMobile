@@ -70,7 +70,9 @@
 
     <!-- Notifications -->
     <string name="Notification">Notification</string>
-    <string name="tryNotification">To see notifications, disable wifi.</string>
+    <string name="tryNotification">To see notifications, wait until 10:30 or 15:00.</string>
+    <string name="pop_messages">Pop Message</string>
+    <string name="tryPopMessages">To see pop-up messages, disable wifi and look at a country or region you haven\'t seen yet.</string>
     <string name="enableWifi">Please activate your phone\'s wifi to access the information.</string>
 
     <!-- Information fragment -->
@@ -80,7 +82,10 @@
     <string name="version_app_text">Version: 1.0</string>
     <string name="objective_app_text">Objective of the application: \"To help students find universities all over the world.</string>
     <string name="languages_app_text">Supported languages: English, French and German.</string>
-    <string name="api_app_text">Api used: https://restcountries.eu/</string>
+    <string name="api_app_text">Api used:</string>
     <string name="github_app_text">Link to the github:</string>
+    <string name="api_app_link" translatable="false">https://restcountries.eu/</string>
+    <string name="github_app_link">Click here</string>
+    <string name="logo" translatable="false">Application\'s image</string>
 
 </resources>

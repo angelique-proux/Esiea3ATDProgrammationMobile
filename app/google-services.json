@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "641498243592",
+    "project_id": "universcite-304bd",
+    "storage_bucket": "universcite-304bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641498243592:android:c9ec1b38f9296ac6e2e7bd",
+        "android_client_info": {
+          "package_name": "com.example.esiea3atd1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641498243592-r5ciqb1a8u6he7lb4qakmfn188d59amt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAjiY-hDBgqIUcJtY6YIJHJzXrYBK63rQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641498243592-r5ciqb1a8u6he7lb4qakmfn188d59amt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -77,14 +79,16 @@ class CountriesListFragment : Fragment() {
         if (region != "-1") {
             Singletons.countriesApi.getCountriesPerRegion(region).enqueue(object: Callback<List<CountryResponse>> {
                 override fun onFailure(call: Call<List<CountryResponse>>, t: Throwable) {
+                    //Alert
                     Alerter.Companion.create(activity!!)
-                        .setTitle(R.string.Notification)
+                        .setTitle(R.string.pop_messages)
                         .setText(R.string.enableWifi)
                         .setIcon(R.drawable.ic_baseline_flight_24)
-                        .setBackgroundColorRes(R.color.notifications)
+                        .setBackgroundColorRes(R.color.alertes)
                         .setDuration(3000)
                         .setOnClickListener {
                             Toast.makeText(context, R.string.enableWifi, Toast.LENGTH_SHORT).show()
+                            findNavController().navigate(R.id.NavigateToMenu0)
                         }
                         .show()
                 }

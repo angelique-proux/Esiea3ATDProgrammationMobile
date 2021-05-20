@@ -37,7 +37,7 @@
     <string name="NoBorders">Il n\'y a pas de pays frontalier.</string>
     <string name="NoCapital">Il n\'y a pas de capitale.</string>
     <string name="enableWifi">Veuillez activer le wifi de votre téléphone pour accéder aux informations.</string>
-    <string name="tryNotification">Pour voir les notifications, désactivez le wifi.</string>
+    <string name="tryNotification">Pour voir des notifications, attendez 10h30 ou 15h00.</string>
     <string name="welcome">Bienvenue sur cette application,</string>
     <string name="Notification">Notification</string>
     <string name="NoLanguages">Il n\'y a pas de langues.</string>
@@ -51,6 +51,9 @@
     <string name="version_app_text">Version : 1.0</string>
     <string name="objective_app_text">Objectif de l\'application : \"Aider les étudiants à trouver des universités dans le monde entier.\"</string>
     <string name="languages_app_text">Langues supportées : Français, Anglais et Allemand.</string>
-    <string name="api_app_text">Api utilisée : https://restcountries.eu/</string>
+    <string name="api_app_text">Api utilisée :</string>
     <string name="github_app_text">Lien vers le github :</string>
+    <string name="tryPopMessages">Pour voir des messages rapides, désactivez le wifi et consultez un pays ou une région que vous n\'avez pas encore vu.</string>
+    <string name="pop_messages">Message rapide</string>
+    <string name="github_app_link">Cliquez ici</string>
 </resources>

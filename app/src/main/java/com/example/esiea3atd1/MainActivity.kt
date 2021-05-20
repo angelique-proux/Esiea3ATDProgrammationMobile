@@ -1,16 +1,25 @@
 package com.example.esiea3atd1
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.preference.PreferenceManager
 import com.example.esiea3atd1.settings.LanguageManager
 import com.tapadoo.alerter.Alerter
 
+
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     private var settingsCode = 243
@@ -24,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         setLanguageOfApp()
         setThemeOfApp()
         setContentView(R.layout.activity_main)
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -45,16 +53,26 @@ class MainActivity : AppCompatActivity() {
                 startActivityForResult(intent, settingsCode)
                 true
             }
-            R.id.action_notifications -> {
+            R.id.action_alertes -> {
                 Alerter.Companion.create(this)
-                    .setTitle(R.string.Notification)
-                    .setText(R.string.tryNotification)
+                    .setTitle(R.string.pop_messages)
+                    .setText(R.string.tryPopMessages)
                     .setIcon(R.drawable.ic_baseline_flight_24)
-                    .setBackgroundColorRes(R.color.notifications)
-                    .setDuration(2000)
+                    .setBackgroundColorRes(R.color.alertes)
+                    .setDuration(4500)
                     .setOnClickListener {
                         Toast.makeText(this, R.string.tryNotification, Toast.LENGTH_SHORT).show()
                     }
+                    .show()
+                true
+            }
+            R.id.action_notifications -> {
+                Alerter.Companion.create(this)
+                    .setTitle(R.string.pop_messages)
+                    .setText(R.string.tryNotification)
+                    .setIcon(R.drawable.ic_baseline_flight_24)
+                    .setBackgroundColorRes(R.color.alertes)
+                    .setDuration(3500)
                     .show()
                 true
             }
@@ -95,5 +113,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
 }
