@@ -46,6 +46,8 @@ class CountryDetailFragment : Fragment() {
 
     private lateinit var imageViewFlag: ImageView
 
+    private lateinit var countryNameString: String
+
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
@@ -101,6 +103,7 @@ class CountryDetailFragment : Fragment() {
                     response: Response<List<CountryResponse>>
             ) {
                 if(response.isSuccessful && response.body() != null){
+                    countryNameString = response.body()!![0].name
                     textViewName.text = response.body()!![0].nativeName
                     textViewCapital.text = response.body()!![0].capital
                     textViewPopulation.text = response.body()!![0].population.toString()

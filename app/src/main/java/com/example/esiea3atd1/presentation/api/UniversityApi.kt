@@ -5,6 +5,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface UniversityApi {
-    @GET("/search")
+    @GET("search")
     fun getUniversitiesPerCountry(@Query("country") country: String): Call<List<UniversityResponse>>
 }

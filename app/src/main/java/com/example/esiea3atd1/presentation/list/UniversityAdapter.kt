@@ -17,22 +17,15 @@ class UniversityAdapter (private var dataSet: List<UniversityResponse>, private 
      * (custom ViewHolder).
      */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView
-        val imageView: ImageView
-
-        init {
-            // Define click listener for the ViewHolder's View.
-            textView = view.findViewById(R.id.list_country_name)
-            imageView = view.findViewById(R.id.list_country_pic)
-        }
-
+        val textViewName: TextView = view.findViewById(R.id.list_university_name)
+        val textViewDomain: TextView = view.findViewById(R.id.list_university_domain)
     }
 
     // Create new views (invoked by the layout manager)
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
-                .inflate(R.layout.list_countries, viewGroup, false)
+                .inflate(R.layout.list_universites, viewGroup, false)
 
         return ViewHolder(view)
     }
@@ -48,9 +41,10 @@ class UniversityAdapter (private var dataSet: List<UniversityResponse>, private 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         val university : UniversityResponse = dataSet[position]
-        viewHolder.textView.text = university.country
+        viewHolder.textViewName.text = university.name
+        viewHolder.textViewDomain.text = university.domains!![0]
         viewHolder.itemView.setOnClickListener {
-            listener?.invoke(university.web_pages[0])
+            listener?.invoke(university.web_pages!![0])
         }
     }
 

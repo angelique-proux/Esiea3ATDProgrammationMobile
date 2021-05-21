@@ -29,7 +29,7 @@ class Singletons {
             .build()
 
         val universityApi: UniversityApi = Retrofit.Builder()
-            .baseUrl("http://universities.hipolabs.com")
+            .baseUrl("http://universities.hipolabs.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(okhttpClient2)
             .build()

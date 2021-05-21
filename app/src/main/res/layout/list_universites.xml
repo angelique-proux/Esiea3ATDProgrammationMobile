@@ -6,31 +6,35 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-
-    <ImageView
-        android:id="@+id/list_country_pic"
-        android:layout_width="132dp"
-        android:layout_height="85dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/list_country_name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="Country flag" />
-
     <TextView
-        android:id="@+id/list_country_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="cursive"
+        android:id="@+id/list_university_name"
+        android:layout_width="140dp"
+        android:layout_height="80dp"
+        android:fontFamily="serif"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="20sp"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/list_university_domain"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Name university" />
+
+    <TextView
+        android:id="@+id/list_university_domain"
+        android:layout_width="140dp"
+        android:layout_height="80dp"
+        android:fontFamily="serif"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/list_country_pic"
+        app:layout_constraintHorizontal_bias="0.604"
+        app:layout_constraintStart_toEndOf="@+id/list_university_name"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Country 1" />
+        tools:text="Domain university" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
