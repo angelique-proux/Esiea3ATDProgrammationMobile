@@ -56,4 +56,7 @@
     <string name="tryPopMessages">Pour voir des messages rapides, désactivez le wifi et consultez un pays ou une région que vous n\'avez pas encore vu.</string>
     <string name="pop_messages">Message rapide</string>
     <string name="github_app_link">Cliquez ici</string>
+    <string name="ErrorApi">Une erreur s\'est produite du côté de l\'api, veuillez réessayer ou vous rendre sur le site de l\'api pour voir les universités.</string>
+    <string name="number_of_university">Nous avons trouvé</string>
+    <string name="number_of_university2">universités pour ce pays.</string>
 </resources>

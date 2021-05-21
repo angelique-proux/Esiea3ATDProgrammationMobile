@@ -10,12 +10,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esiea3atd1.R
 import com.example.esiea3atd1.presentation.Singletons
 import com.example.esiea3atd1.presentation.api.UniversityResponse
+import com.tapadoo.alerter.Alerter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -31,6 +34,8 @@ class UniversitiesListFragment : Fragment() {
     private val layoutManager = LinearLayoutManager(context)
 
     private lateinit var textViewCountry: TextView
+
+    private lateinit var textViewUniversityNumber: TextView
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -52,7 +57,7 @@ class UniversitiesListFragment : Fragment() {
         }
 
         textViewCountry = view.findViewById(R.id.country_name)
-        textViewCountry.text = arguments?.getString("countryNameForUni")
+        textViewUniversityNumber = view.findViewById(R.id.university_number)
 
 
         val list = getListFromCache()
@@ -79,8 +84,18 @@ class UniversitiesListFragment : Fragment() {
         Singletons.universityApi.getUniversitiesPerCountry(country).enqueue(object: Callback<List<UniversityResponse>> {
             @SuppressLint("SetTextI18n")
             override fun onFailure(call: Call<List<UniversityResponse>>, t: Throwable) {
-                //TODO("Not yet implemented")
-                textViewCountry.text = "Error"
+                //Alert
+                Alerter.Companion.create(activity!!)
+                    .setTitle(R.string.pop_messages)
+                    .setText(R.string.enableWifi)
+                    .setIcon(R.drawable.ic_baseline_flight_24)
+                    .setBackgroundColorRes(R.color.alertes)
+                    .setDuration(3000)
+                    .setOnClickListener {
+                        Toast.makeText(context, R.string.enableWifi, Toast.LENGTH_SHORT).show()
+                        findNavController().navigate(R.id.NavigateToMenu2)
+                    }
+                    .show()
             }
             override fun onResponse(
                     call: Call<List<UniversityResponse>>,
@@ -91,6 +106,10 @@ class UniversitiesListFragment : Fragment() {
                     textViewCountry.text = response.body()!![0].country
                     saveListIntoCache()
                     showList(universitiesResponse)
+                    val text = resources.getString(R.string.number_of_university) + " " + adapter.itemCount.toString() + " " + resources.getString(R.string.number_of_university2)
+                    textViewUniversityNumber.text = text
+                } else {
+                    textViewCountry.text = getString(R.string.ErrorApi)
                 }
             }
         })

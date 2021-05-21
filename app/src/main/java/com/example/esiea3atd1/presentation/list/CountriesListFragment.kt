@@ -88,7 +88,7 @@ class CountriesListFragment : Fragment() {
                         .setDuration(3000)
                         .setOnClickListener {
                             Toast.makeText(context, R.string.enableWifi, Toast.LENGTH_SHORT).show()
-                            findNavController().navigate(R.id.NavigateToMenu0)
+                            findNavController().navigate(R.id.NavigateToMenu1)
                         }
                         .show()
                 }

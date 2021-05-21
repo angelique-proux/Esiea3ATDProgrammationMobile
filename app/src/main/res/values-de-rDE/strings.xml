@@ -56,4 +56,7 @@
     <string name="tryPopMessages">Um Pop-Meldungen zu sehen, deaktivieren Sie WLAN und wählen Sie ein Land oder eine Region aus, die Sie noch nicht gesehen haben.</string>
     <string name="pop_messages">Pop-Meldung</string>
     <string name="github_app_link">Klicken Sie hier</string>
+    <string name="ErrorApi">Auf der Api-Seite ist ein Fehler aufgetreten, bitte versuchen Sie es erneut oder gehen Sie auf die Api-Webseite, um die Universitäten zu sehen.</string>
+    <string name="number_of_university">Wir haben</string>
+    <string name="number_of_university2">Universitäten für dieses Land gefunden.</string>
 </resources>

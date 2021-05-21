@@ -88,4 +88,9 @@
     <string name="github_app_link">Click here</string>
     <string name="logo" translatable="false">Application\'s image</string>
 
+
+    <string name="ErrorApi">An error occurred on the api side, please try again or go to the api website to see the universities.</string>
+    <string name="number_of_university">We have found</string>
+    <string name="number_of_university2"> universities for this country.</string>
+
 </resources>

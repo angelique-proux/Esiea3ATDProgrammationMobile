@@ -49,6 +49,9 @@
         <action
             android:id="@+id/NavigateToCountryDetail"
             app:destination="@id/DetailCountryFragment" />
+        <action
+            android:id="@+id/NavigateToMenu1"
+            app:destination="@+id/MenuFragment" />
     </fragment>
 
     <fragment
@@ -67,11 +70,11 @@
             app:destination="@id/MenuFragment" />
         <action
             android:id="@+id/NavigateToUniversitiesList"
-            app:destination="@+id/UnivertiesFragment" />
+            app:destination="@+id/UniversitiesFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/UnivertiesFragment"
+        android:id="@+id/UniversitiesFragment"
         android:name="com.example.esiea3atd1.presentation.list.UniversitiesListFragment"
         android:label="@string/fourth_fragment_label"
         tools:layout="@layout/fragment_university_list">
@@ -82,8 +85,8 @@
             android:defaultValue="-1" />
 
         <action
-            android:id="@+id/NavigateToRegionList2"
-            app:destination="@id/RegionListFragment" />
+            android:id="@+id/NavigateToMenu2"
+            app:destination="@id/MenuFragment" />
     </fragment>
 
     <fragment
