@@ -31,10 +31,14 @@ class InformationFragment : Fragment() {
             findNavController().navigate(R.id.NavigateToMenu0)
         }
         view.findViewById<TextView>(R.id.githubLinkApp).setOnClickListener {
-            openBrowser("http://github.com")
+            openBrowser(resources.getString(R.string.github_app_link))
         }
         view.findViewById<TextView>(R.id.apiLinkApp).setOnClickListener {
-            openBrowser("https://restcountries.eu/")
+            openBrowser(resources.getString(R.string.api_country_app_link))
+        }
+
+        view.findViewById<TextView>(R.id.api2LinkApp).setOnClickListener {
+            openBrowser(resources.getString(R.string.api_university_app_link))
         }
 
     }

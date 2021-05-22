@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -20,18 +19,6 @@
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <!-- Text -->
-    <TextView
-        android:id="@+id/nameApp"
-        android:layout_width="278dp"
-        android:layout_height="22dp"
-        android:fontFamily="serif"
-        android:text="@string/name_app_text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.279" />
 
     <TextView
         android:id="@+id/authorApp"
@@ -41,36 +28,10 @@
         android:text="@string/author_app_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.339" />
-
-    <TextView
-        android:id="@+id/dateApp"
-        android:layout_width="278dp"
-        android:layout_height="22dp"
-        android:fontFamily="serif"
-        android:text="@string/date_app_text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.399" />
-
-    <TextView
-        android:id="@+id/versionApp"
-        android:layout_width="278dp"
-        android:layout_height="22dp"
-        android:fontFamily="serif"
-        android:text="@string/version_app_text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateApp"
-        app:layout_constraintVertical_bias="0.054" />
+        app:layout_constraintVertical_bias="0.324" />
 
     <TextView
         android:id="@+id/objectiveApp"
@@ -81,10 +42,50 @@
         android:text="@string/objective_app_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/versionApp"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/apiLinkApp"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:fontFamily="serif"
+        android:text="@string/api_country_app_text"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/languagesApp"
+        app:layout_constraintVertical_bias="0.071" />
+
+    <TextView
+        android:id="@+id/nameApp"
+        android:layout_width="278dp"
+        android:layout_height="22dp"
+        android:fontFamily="serif"
+        android:text="@string/name_app_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.265" />
+
+    <TextView
+        android:id="@+id/versionApp"
+        android:layout_width="278dp"
+        android:layout_height="22dp"
+        android:fontFamily="serif"
+        android:text="@string/version_app_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateApp"
+        app:layout_constraintVertical_bias="0.053" />
 
     <TextView
         android:id="@+id/languagesApp"
@@ -95,68 +96,66 @@
         android:text="@string/languages_app_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/objectiveApp"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/apiApp"
-        android:layout_width="90dp"
+        android:id="@+id/api2LinkApp"
+        android:layout_width="wrap_content"
         android:layout_height="22dp"
         android:fontFamily="serif"
-        android:text="@string/api_app_text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/languagesApp"
-        app:layout_constraintVertical_bias="0.09" />
-
-    <TextView
-        android:id="@+id/apiLinkApp"
-        android:layout_width="175dp"
-        android:layout_height="22dp"
-        android:fontFamily="serif"
-        android:text="@string/api_app_link"
+        android:text="@string/api_university_app_text"
         android:textColor="?attr/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.716"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/languagesApp"
-        app:layout_constraintVertical_bias="0.09" />
-
-    <TextView
-        android:id="@+id/githubApp"
-        android:layout_width="147dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="22dp"
-        android:fontFamily="serif"
-        android:text="@string/github_app_text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apiApp"
-        app:layout_constraintVertical_bias="0.005" />
+        app:layout_constraintTop_toBottomOf="@+id/apiLinkApp"
+        app:layout_constraintVertical_bias="0.084" />
 
     <TextView
         android:id="@+id/githubLinkApp"
-        android:layout_width="113dp"
+        android:layout_width="wrap_content"
         android:layout_height="21dp"
-        android:layout_marginTop="22dp"
         android:fontFamily="serif"
-        android:text="@string/github_app_link"
+        android:text="@string/github_app_click"
         android:textColor="?attr/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.775"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toEndOf="@+id/githubApp"
+        app:layout_constraintTop_toBottomOf="@+id/api2LinkApp"
+        app:layout_constraintVertical_bias="0.147" />
+
+    <TextView
+        android:id="@+id/githubApp"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:fontFamily="serif"
+        android:text="@string/github_app_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/githubLinkApp"
+        app:layout_constraintHorizontal_bias="0.334"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apiApp"
-        app:layout_constraintVertical_bias="0.005" />
+        app:layout_constraintTop_toBottomOf="@+id/api2LinkApp"
+        app:layout_constraintVertical_bias="0.146" />
+
+    <TextView
+        android:id="@+id/dateApp"
+        android:layout_width="278dp"
+        android:layout_height="22dp"
+        android:fontFamily="serif"
+        android:text="@string/date_app_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.385" />
 
     <!-- Button -->
+
     <ImageButton
         android:id="@+id/imageButtonApp"
         android:layout_width="wrap_content"

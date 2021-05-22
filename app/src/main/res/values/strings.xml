@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">UniversCity</string>
+    <string name="app_name" translatable="false">UniversCity</string>
     <string name="action_settings">Settings</string>
 
     <!-- Strings used for fragments for navigation -->
@@ -76,16 +76,19 @@
     <string name="enableWifi">Please activate your phone\'s wifi to access the information.</string>
 
     <!-- Information fragment -->
-    <string name="name_app_text">Name of the application: UniversCité</string>
+    <string name="name_app_text">Name of the application: UniversCity</string>
     <string name="author_app_text">Creator: Angélique P.</string>
     <string name="date_app_text">Date of the last version: 23/05/2021</string>
     <string name="version_app_text">Version: 1.0</string>
     <string name="objective_app_text">Objective of the application: \"To help students find universities all over the world.</string>
     <string name="languages_app_text">Supported languages: English, French and German.</string>
-    <string name="api_app_text">Api used:</string>
     <string name="github_app_text">Link to the github:</string>
-    <string name="api_app_link" translatable="false">https://restcountries.eu/</string>
-    <string name="github_app_link">Click here</string>
+    <string name="github_app_link" translatable="false">https://github.com/</string>
+    <string name="api_country_app_text">Link to the countries api</string>
+    <string name="api_country_app_link" translatable="false">https://restcountries.eu/</string>
+    <string name="api_university_app_text">Link to the universities api</string>
+    <string name="api_university_app_link" translatable="false">https://github.com/Hipo/university-domains-list</string>
+    <string name="github_app_click">Click here</string>
     <string name="logo" translatable="false">Application\'s image</string>
 
 

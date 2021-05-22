@@ -5,13 +5,12 @@ import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esiea3atd1.R
 
 
-class RegionAdapter (private var dataSet: List<String>, var listener: ((String) -> Unit)? = null ) :
+class RegionAdapter (private var dataSet: List<String>, private var listener: ((String) -> Unit)? = null ) :
     RecyclerView.Adapter<RegionAdapter.ViewHolder>() {
 
     private lateinit var resources: Resources
