@@ -1,4 +1,4 @@
-# Programmation Mobile
+# Programmation Mobile - UniversCity
 
 ## Projet de 3ème année, ESIEA, 2021
 
@@ -17,7 +17,7 @@ Sur la maquette ci-dessous, vous pouvez voir la navigation entre les pages ainsi
 ![Maquette](https://user-images.githubusercontent.com/72751313/119257640-74a7ba00-bbc6-11eb-8740-5d8c7e853235.png)
 
 
-#### Contenu plus technique de l'application
+#### Contenu de l'application
 
 L'application contient :
 
@@ -44,12 +44,13 @@ L'application contient :
 - utilisation d'alertes pour alerter l'utilisateur lors d'un non-fonctionnement (perte du réseau lors de l'appel à l'API)
 
 - autres fonctionnalités : 
-> possibilité de changer la langue de l'application (par défaut en anglais) de changer le thème, de renseigner un nom d'utilisateur, une location et une langue étudiée pour ensuite les utiliser
+> possibilité de changer la langue de l'application (par défaut en anglais) de changer le thème, de renseigner un nom d'utilisateur, une location et une langue étudiée pour ensuite les utiliser, 
+
 > possibilité d'ouvrir les liens vers les Apis et vers le github dans la page Information, et les liens vers les universités via la page Universités
 
-* les notifications push Firebase nécessite l'ouverture de l'application Firebase pour être envoyées, il se peut que vous n'en recevez pas aux heures définies.
+* les notifications push Firebase nécessitent l'ouverture de l'application Firebase pour être envoyées, il se peut que vous n'en recevez pas aux heures définies.
 
-Ci-dessous vous trouverez les notifications planifiées sur Firebase et leur réception sur l'application.
+Ci-dessous vous trouverez des notifications planifiées sur Firebase et leur réception sur l'application.
 
 Sur Firebase :
 
@@ -60,3 +61,10 @@ Sur le téléphone :
 ![NotificationPlanifiéeArrivée](https://user-images.githubusercontent.com/72751313/119254757-82eed980-bbb8-11eb-8356-867f6e3effa6.png)
 
 ![PremièreNotificationFirebase](https://user-images.githubusercontent.com/72751313/119254766-8e420500-bbb8-11eb-8c04-bb30ca09426a.png)
+
+
+#### Architecture
+
+Sur le schéma ci-dessous, vous pouvez avoir une vision plus globale de la structure de l'application.
+
+![Architecture](https://user-images.githubusercontent.com/72751313/119262356-2e108a80-bbdb-11eb-82e9-b52a3cec5c7a.png)

@@ -1,4 +1,4 @@
-# Programmation Mobile
+# Programmation Mobile - UniversCity
 
 ## Projet de 3ème année, ESIEA, 2021
 
@@ -74,17 +74,17 @@ Voici un aperçu de cette page :
 
 #### À savoir
 
-##### Réseau
+##### > Réseau
 
 L'application utilisant deux Api Rest, il est nécessaire d'activer le wifi ou les données cellulaires du téléphone pour recevoir les données.
 Si votre wifi est désactivé et que vous n'avez pas encore consulté les pays de votre continent par exemple, la liste correspondante ne s'affichera pas. Un message d'alerte viendra vous rappeler d'activer votre wifi. En cliquant sur le message, vous serez redirigés vers le menu.
 L'appel ne s'effectuant qu'une seule fois, il vous faudra retourner en arrière pour accéder à la liste une fois votre wifi activé.
 
-##### Langues
+##### > Langues
 
 L'application est disponible en français, en anglais et en allemand. Par défaut, l'application est en anglais mais vous pouvez choisir votre langue dans les paramètres.
 
-##### Notifications
+##### > Notifications
 
 Des notifications vous sont envoyées chaque jour à 10H30 et à 15h pour vous rappeler de l'utiliser pour trouver l'université qui vous correspond.
 Voici un exemple de notifications :
@@ -93,9 +93,9 @@ Voici un exemple de notifications :
 
 Ces notifications sont envoyées par le site firebase.
 
-##### Alertes
+##### > Alertes
 
-L'application vous envoie des alertes lorsqu'une api n'a pas pu être atteinte. Ces alertes vous rappellent d'activer votre wifi pour accéder aux données que vous n'avez pas consulté auparavent.
+L'application vous envoie des alertes lorsqu'une api n'a pas pu être atteinte. Ces alertes vous rappellent d'activer votre wifi pour accéder aux données que vous n'avez pas consulté auparavant.
 Voici un exemple d'alertes :
 
 ![AppAlerte](https://user-images.githubusercontent.com/72751313/119254272-b67c3480-bbb5-11eb-9f32-bf9bc8c60bd1.png)
@@ -106,4 +106,6 @@ Pour avoir un exemple d'alerte sans déactiver votre wifi, cliquez sur "message 
 
 ##### Informations complémentaires
 
-Pour plus d'informations, veuillez consulter le dossier [informations détaillées](https://github.com/angelique2000/Esiea3ATDProgrammationMobile/informations_détaillées)
+Pour plus d'informations, veuillez consulter le fichier [Informations](https://github.com/angelique2000/Esiea3ATDProgrammationMobile/blob/master/application_informations/Informations.md)
+
+Vous y trouverez une maquette du projet, son contenu de façon plus détaillée ainsi qu'un schéma de son architecture.
