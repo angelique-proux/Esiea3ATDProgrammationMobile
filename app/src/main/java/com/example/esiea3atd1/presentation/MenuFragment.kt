@@ -1,4 +1,4 @@
-package com.example.esiea3atd1
+package com.example.esiea3atd1.presentation
 
 import android.annotation.SuppressLint
 import android.content.SharedPreferences
@@ -12,10 +12,8 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.preference.PreferenceManager
+import com.example.esiea3atd1.R
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class MenuFragment : Fragment() {
 
     private lateinit var sharedPreferences: SharedPreferences
@@ -47,19 +45,22 @@ class MenuFragment : Fragment() {
         }
 
         view.findViewById<Button>(R.id.countries_button).setOnClickListener {
-            findNavController().navigate(R.id.NavigateToMyRegion, bundleOf(
+            findNavController().navigate(
+                R.id.NavigateToMyRegion, bundleOf(
                 "regionName" to sharedPreferences.getString(prefRegion, "Europe")
             ))
         }
 
         view.findViewById<Button>(R.id.country_button).setOnClickListener {
-            findNavController().navigate(R.id.NavigateToMyCountry, bundleOf(
+            findNavController().navigate(
+                R.id.NavigateToMyCountry, bundleOf(
                 "countryName" to sharedPreferences.getString(prefCountry, "France")
             ))
         }
 
         view.findViewById<Button>(R.id.language_button).setOnClickListener {
-            findNavController().navigate(R.id.NavigateToMyRegion, bundleOf(
+            findNavController().navigate(
+                R.id.NavigateToMyRegion, bundleOf(
                 "languageName" to sharedPreferences.getString(prefLanguage, "fr")
             ))
         }

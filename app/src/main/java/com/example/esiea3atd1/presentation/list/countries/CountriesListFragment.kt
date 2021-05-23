@@ -1,7 +1,5 @@
-package com.example.esiea3atd1.presentation.list
+package com.example.esiea3atd1.presentation.list.countries
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esiea3atd1.R
 import com.example.esiea3atd1.presentation.Singletons
+import com.example.esiea3atd1.presentation.adapter.CountryAdapter
 import com.example.esiea3atd1.presentation.api.CountryResponse
 import com.tapadoo.alerter.Alerter
 import retrofit2.Call
@@ -29,8 +28,6 @@ class CountriesListFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
 
     private val adapter = CountryAdapter(listOf(), ::onClickedCountry)
-
-    private val sharedPref: SharedPreferences? = activity?.getSharedPreferences("app", Context.MODE_PRIVATE)
 
     private val layoutManager = LinearLayoutManager(context)
 
@@ -52,23 +49,8 @@ class CountriesListFragment : Fragment() {
             adapter = this@CountriesListFragment.adapter
         }
 
-        val list = getListFromCache()
-        if(list.isEmpty()){
-            callApi()
-        } else {
-            showList(list)
-        }
+        callApi()
 
-    }
-
-    private fun getListFromCache(): List<CountryResponse> {
-        //sharedPref
-        //TODO
-        return emptyList()
-    }
-
-    private fun saveListIntoCache() {
-        //TODO
     }
 
     private fun callApi() {
@@ -83,7 +65,7 @@ class CountriesListFragment : Fragment() {
                         .setText(R.string.enableWifi)
                         .setIcon(R.drawable.ic_baseline_flight_24)
                         .setBackgroundColorRes(R.color.alertes)
-                        .setDuration(3000)
+                        .setDuration(3500)
                         .setOnClickListener {
                             Toast.makeText(context, R.string.enableWifi, Toast.LENGTH_SHORT).show()
                             findNavController().navigate(R.id.NavigateToMenu1)
@@ -96,7 +78,6 @@ class CountriesListFragment : Fragment() {
                 ) {
                     if (response.isSuccessful && response.body() != null) {
                         val countriesResponse: List<CountryResponse> = response.body()!!
-                        saveListIntoCache()
                         showList(countriesResponse)
                     }
                 }
@@ -104,7 +85,18 @@ class CountriesListFragment : Fragment() {
         } else {
             Singletons.countriesApi.getCountriesPerLanguage(language).enqueue(object: Callback<List<CountryResponse>> {
                 override fun onFailure(call: Call<List<CountryResponse>>, t: Throwable) {
-                    //TODO("Not yet implemented")
+                    //Alert
+                    Alerter.Companion.create(activity!!)
+                        .setTitle(R.string.pop_messages)
+                        .setText(R.string.enableWifi)
+                        .setIcon(R.drawable.ic_baseline_flight_24)
+                        .setBackgroundColorRes(R.color.alertes)
+                        .setDuration(3500)
+                        .setOnClickListener {
+                            Toast.makeText(context, R.string.enableWifi, Toast.LENGTH_SHORT).show()
+                            findNavController().navigate(R.id.NavigateToMenu1)
+                        }
+                        .show()
                 }
                 override fun onResponse(
                     call: Call<List<CountryResponse>>,
@@ -112,7 +104,6 @@ class CountriesListFragment : Fragment() {
                 ) {
                     if (response.isSuccessful && response.body() != null) {
                         val countriesResponse: List<CountryResponse> = response.body()!!
-                        saveListIntoCache()
                         showList(countriesResponse)
                     }
                 }
@@ -126,8 +117,8 @@ class CountriesListFragment : Fragment() {
     }
 
     private fun onClickedCountry(name: String) {
-        findNavController().navigate(R.id.NavigateToCountryDetail, bundleOf(
-            "countryName" to name
-        ))
+            findNavController().navigate(R.id.NavigateToCountryDetail, bundleOf(
+                "countryName" to name
+            ))
     }
 }

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/MenuFragment"
-        android:name="com.example.esiea3atd1.MenuFragment"
+        android:name="com.example.esiea3atd1.presentation.MenuFragment"
         android:label="@string/menu_fragment_label"
         tools:layout="@layout/fragment_menu">
 
@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/RegionListFragment"
-        android:name="com.example.esiea3atd1.presentation.list.RegionListFragment"
+        android:name="com.example.esiea3atd1.presentation.list.continent.RegionListFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_region_list">
 
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/CountriesFragment"
-        android:name="com.example.esiea3atd1.presentation.list.CountriesListFragment"
+        android:name="com.example.esiea3atd1.presentation.list.countries.CountriesListFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_country_list">
 
@@ -75,7 +75,7 @@
 
     <fragment
         android:id="@+id/UniversitiesFragment"
-        android:name="com.example.esiea3atd1.presentation.list.UniversitiesListFragment"
+        android:name="com.example.esiea3atd1.presentation.list.university.UniversitiesListFragment"
         android:label="@string/fourth_fragment_label"
         tools:layout="@layout/fragment_university_list">
 
@@ -91,7 +91,7 @@
 
     <fragment
         android:id="@+id/InformationFragment"
-        android:name="com.example.esiea3atd1.InformationFragment"
+        android:name="com.example.esiea3atd1.presentation.InformationFragment"
         android:label="@string/info_fragment_label"
         tools:layout="@layout/fragment_information">
 

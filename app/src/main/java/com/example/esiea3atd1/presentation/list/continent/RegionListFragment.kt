@@ -1,7 +1,5 @@
-package com.example.esiea3atd1.presentation.list
+package com.example.esiea3atd1.presentation.list.continent
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,13 +10,12 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esiea3atd1.R
+import com.example.esiea3atd1.presentation.adapter.RegionAdapter
 
 class RegionListFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
 
-    private val adapter = RegionAdapter(listOf(), ::onClikedRegion)
-
-    private val sharedPref: SharedPreferences? = activity?.getSharedPreferences("app", Context.MODE_PRIVATE)
+    private val adapter = RegionAdapter(listOf(), ::onClickedRegion)
 
     private val layoutManager = LinearLayoutManager(context)
 
@@ -49,7 +46,7 @@ class RegionListFragment : Fragment() {
 
     }
 
-    private fun onClikedRegion(region: String) {
+    private fun onClickedRegion(region: String) {
         findNavController().navigate(R.id.NavigateToCountriesList, bundleOf(
                 "regionName" to region
         ))

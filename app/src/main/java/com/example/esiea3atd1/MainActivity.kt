@@ -1,21 +1,15 @@
 package com.example.esiea3atd1
 
-import android.app.NotificationChannel
-import android.app.NotificationManager
 import android.content.Intent
 import android.content.SharedPreferences
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
 import androidx.preference.PreferenceManager
 import com.example.esiea3atd1.settings.LanguageManager
+import com.example.esiea3atd1.settings.SettingsActivity
 import com.tapadoo.alerter.Alerter
 
 
@@ -59,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                     .setText(R.string.tryPopMessages)
                     .setIcon(R.drawable.ic_baseline_flight_24)
                     .setBackgroundColorRes(R.color.alertes)
-                    .setDuration(4500)
+                    .setDuration(5000)
                     .setOnClickListener {
                         Toast.makeText(this, R.string.tryNotification, Toast.LENGTH_SHORT).show()
                     }

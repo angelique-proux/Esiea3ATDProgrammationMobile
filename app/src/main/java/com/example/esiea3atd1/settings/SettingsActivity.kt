@@ -1,4 +1,4 @@
-package com.example.esiea3atd1
+package com.example.esiea3atd1.settings
 
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
-import com.example.esiea3atd1.settings.LanguageManager
+import com.example.esiea3atd1.R
 
 class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
 

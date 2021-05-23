@@ -1,22 +1,23 @@
-package com.example.esiea3atd1.presentation.list
+package com.example.esiea3atd1.presentation.list.university
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esiea3atd1.R
 import com.example.esiea3atd1.presentation.Singletons
+import com.example.esiea3atd1.presentation.adapter.UniversityAdapter
 import com.example.esiea3atd1.presentation.api.UniversityResponse
 import com.tapadoo.alerter.Alerter
 import retrofit2.Call
@@ -28,8 +29,6 @@ class UniversitiesListFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
 
     private val adapter = UniversityAdapter(listOf(), ::onClickedUniversity)
-
-    private val sharedPref: SharedPreferences? = activity?.getSharedPreferences("app", Context.MODE_PRIVATE)
 
     private val layoutManager = LinearLayoutManager(context)
 
@@ -60,23 +59,12 @@ class UniversitiesListFragment : Fragment() {
         textViewUniversityNumber = view.findViewById(R.id.university_number)
 
 
-        val list = getListFromCache()
-        if(list.isEmpty()){
-            callApi()
-        } else {
-            showList(list)
+        callApi()
+
+        view.findViewById<Button>(R.id.back_to_menu_button).setOnClickListener {
+            view.findNavController().navigate(R.id.NavigateToMenu2)
         }
 
-    }
-
-    private fun getListFromCache(): List<UniversityResponse> {
-        //sharedPref
-        //TODO
-        return emptyList()
-    }
-
-    private fun saveListIntoCache() {
-        //TODO
     }
 
     private fun callApi() {
@@ -90,7 +78,7 @@ class UniversitiesListFragment : Fragment() {
                     .setText(R.string.enableWifi)
                     .setIcon(R.drawable.ic_baseline_flight_24)
                     .setBackgroundColorRes(R.color.alertes)
-                    .setDuration(3000)
+                    .setDuration(3500)
                     .setOnClickListener {
                         Toast.makeText(context, R.string.enableWifi, Toast.LENGTH_SHORT).show()
                         findNavController().navigate(R.id.NavigateToMenu2)
@@ -102,12 +90,17 @@ class UniversitiesListFragment : Fragment() {
                     response: Response<List<UniversityResponse>>
             ) {
                 if (response.isSuccessful && response.body() != null) {
-                    val universitiesResponse: List<UniversityResponse> = response.body()!!
-                    textViewCountry.text = response.body()!![0].country
-                    saveListIntoCache()
-                    showList(universitiesResponse)
-                    val text = resources.getString(R.string.number_of_university) + " " + adapter.itemCount.toString() + " " + resources.getString(R.string.number_of_university2)
-                    textViewUniversityNumber.text = text
+                    if (response.body()!!.isEmpty()) {
+                        textViewCountry.text = country
+                        val text = resources.getString(R.string.number_of_university) + " 0 " + resources.getString(R.string.number_of_university2)
+                        textViewUniversityNumber.text = text
+                    } else {
+                        val universitiesResponse: List<UniversityResponse> = response.body()!!
+                        textViewCountry.text = response.body()!![0].country
+                        showList(universitiesResponse)
+                        val text = resources.getString(R.string.number_of_university) + " " + adapter.itemCount.toString() + " " + resources.getString(R.string.number_of_university2)
+                        textViewUniversityNumber.text = text
+                    }
                 } else {
                     textViewCountry.text = getString(R.string.ErrorApi)
                 }
@@ -115,11 +108,9 @@ class UniversitiesListFragment : Fragment() {
         })
     }
 
-
     private fun showList(universitiesList: List<UniversityResponse>) {
         adapter.updateList(universitiesList)
     }
-
 
     private fun onClickedUniversity(url: String) {
         val intent = Intent(Intent.ACTION_VIEW)

@@ -1,4 +1,4 @@
-package com.example.esiea3atd1.presentation.list
+package com.example.esiea3atd1.presentation.list.continent
 
 
 class RegionList {

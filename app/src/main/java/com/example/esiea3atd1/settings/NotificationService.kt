@@ -1,11 +1,8 @@
-package com.example.esiea3atd1
+package com.example.esiea3atd1.settings
 
 import android.util.Log
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
-
-
-
 
 class NotificationService : FirebaseMessagingService() {
 

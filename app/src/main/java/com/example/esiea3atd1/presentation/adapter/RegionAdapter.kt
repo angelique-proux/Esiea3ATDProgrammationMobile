@@ -1,4 +1,4 @@
-package com.example.esiea3atd1.presentation.list
+package com.example.esiea3atd1.presentation.adapter
 
 import android.annotation.SuppressLint
 import android.content.res.Resources

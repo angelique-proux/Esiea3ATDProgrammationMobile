@@ -46,7 +46,7 @@ class CountryDetailFragment : Fragment() {
 
     private lateinit var imageViewFlag: ImageView
 
-    private lateinit var countryNameString: String
+    private var countryNameString: String = ""
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -63,8 +63,39 @@ class CountryDetailFragment : Fragment() {
             findNavController().navigate(R.id.NavigateToMenu)
         }
         view.findViewById<Button>(R.id.universities_button).setOnClickListener{
-            val bundle = bundleOf("countryNameForUni" to textViewName.text.toString())
-            view.findNavController().navigate(R.id.NavigateToUniversitiesList, bundle)
+            //Allow the navigation only in the case of a country is found
+            if (countryNameString != "") {
+                //Fix errors related to different country's names in the APIs.
+                when (countryNameString) {
+                    "American Samoa" -> {
+                        countryNameString = "Samoa"
+                    }
+                    "Korea (Democratic People's Republic of)" -> {
+                        countryNameString = "Korea, Democratic People's Republic of"
+                    }
+                    "Korea (Republic of)" -> {
+                        countryNameString = "Korea, Republic of"
+                    }
+                    "Bolivia (Plurinational State of)" -> {
+                        countryNameString = "Bolivia, Plurinational State of"
+                    }
+                    "Congo (Democratic Republic of the)" -> {
+                        countryNameString = "Congo, the Democratic Republic of the"
+                    }
+                    "Iran (Islamic Republic of)" -> {
+                        countryNameString = "Iran"
+                    }
+                    "Venezuela (Bolivarian Republic of)" -> {
+                        countryNameString = "Venezuela, Bolivarian Republic of"
+                    }
+                    "United States of America" -> {
+                        countryNameString = "United States"
+                    }
+                }
+
+                val bundle = bundleOf("countryNameForUni" to countryNameString)
+                view.findNavController().navigate(R.id.NavigateToUniversitiesList, bundle)
+            }
         }
 
 
@@ -91,9 +122,10 @@ class CountryDetailFragment : Fragment() {
                     .setText(R.string.enableWifi)
                     .setIcon(R.drawable.ic_baseline_flight_24)
                     .setBackgroundColorRes(R.color.alertes)
-                    .setDuration(3000)
+                    .setDuration(3500)
                     .setOnClickListener {
                         Toast.makeText(context, R.string.enableWifi, Toast.LENGTH_SHORT).show()
+                        findNavController().navigate(R.id.NavigateToMenu)
                     }
                     .show()
             }
@@ -103,18 +135,22 @@ class CountryDetailFragment : Fragment() {
                     response: Response<List<CountryResponse>>
             ) {
                 if(response.isSuccessful && response.body() != null){
-                    countryNameString = response.body()!![0].name
-                    textViewName.text = response.body()!![0].nativeName
-                    textViewCapital.text = response.body()!![0].capital
-                    textViewPopulation.text = response.body()!![0].population.toString()
-                    textViewArea.text = response.body()!![0].area.toString()
-                    textViewContinent.text = response.body()!![0].region
-                    textViewCurrencies.text = response.body()!![0].currencies[0].name + " " + response.body()!![0].currencies[0].symbol
+                    var number = 0
+                    if (response.body()!![0].name != countryName) {
+                        number = 1
+                    }
+                    countryNameString = response.body()!![number].name
+                    textViewName.text = response.body()!![number].nativeName
+                    textViewCapital.text = response.body()!![number].capital
+                    textViewPopulation.text = response.body()!![number].population.toString()
+                    textViewArea.text = response.body()!![number].area.toString()
+                    textViewContinent.text = response.body()!![number].region
+                    textViewCurrencies.text = response.body()!![number].currencies[0].name + " " + response.body()!![number].currencies[0].symbol
 
-                    if (response.body()!![0].borders.isNotEmpty()) {
+                    if (response.body()!![number].borders.isNotEmpty()) {
                         var bordersCountries = ""
-                        for (i in response.body()!![0].borders.indices) {
-                            bordersCountries += response.body()!![0].borders[i] + " "
+                        for (i in response.body()!![number].borders.indices) {
+                            bordersCountries += response.body()!![number].borders[i] + " "
                             if(i%4==3) {
                                 bordersCountries += "\n"
                             }
@@ -124,11 +160,11 @@ class CountryDetailFragment : Fragment() {
                         textViewBorders.text = resources.getString(R.string.NoBorders)
                     }
 
-                    if (response.body()!![0].languages.isNotEmpty()) {
+                    if (response.body()!![number].languages.isNotEmpty()) {
                         var languagesNames = ""
-                        for (i in response.body()!![0].languages.indices) {
-                            languagesNames += response.body()!![0].languages[i].nativeName + " "
-                            if(i%2==1 && i != response.body()!![0].languages.size-1) {
+                        for (i in response.body()!![number].languages.indices) {
+                            languagesNames += response.body()!![number].languages[i].nativeName + " "
+                            if(i%2==1 && i != response.body()!![number].languages.size-1) {
                                 languagesNames += "\n"
                             }
                         }
@@ -137,11 +173,11 @@ class CountryDetailFragment : Fragment() {
                         textViewLanguages.text = resources.getString(R.string.NoLanguages)
                     }
 
-                    if (response.body()!![0].capital.isEmpty()) {
+                    if (response.body()!![number].capital.isEmpty()) {
                         textViewCapital.text = resources.getString(R.string.NoCapital)
                     }
 
-                    GlideToVectorYou.init().with(context).load(Uri.parse(response.body()!![0].flag),imageViewFlag)
+                    GlideToVectorYou.init().with(context).load(Uri.parse(response.body()!![number].flag),imageViewFlag)
                 }
             }
         })
