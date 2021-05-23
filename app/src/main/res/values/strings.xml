@@ -26,6 +26,11 @@
     <string name="NoCapital">There is no capital.</string>
     <string name="NoLanguages">There is no languages.</string>
 
+    <!-- University Fragment-->
+    <string name="ErrorApi">An error occurred on the api side, please try again or go to the api website to see the universities.</string>
+    <string name="number_of_university">We have found</string>
+    <string name="number_of_university2"> universities for this country.</string>
+
     <!-- Preference Titles -->
     <string name="title_activity_settings">Application settings</string>
     <string name="location_header">Location</string>
@@ -57,10 +62,12 @@
     <string name="application_s_information">Application\'s information</string>
     <string name="my_region">My continent</string>
 
-    <!--Names of continents-->
+    <!-- Languages -->
     <string name="French">French</string>
     <string name="English">English</string>
     <string name="Deutsch">Deutsch</string>
+
+    <!--Names of continents-->
     <string name="Africa">Africa</string>
     <string name="Americas">Americas</string>
     <string name="Asia">Asia</string>
@@ -83,17 +90,12 @@
     <string name="objective_app_text">Objective of the application: \"To help students find universities all over the world.</string>
     <string name="languages_app_text">Supported languages: English, French and German.</string>
     <string name="github_app_text">Link to the github:</string>
-    <string name="github_app_link" translatable="false">https://github.com/</string>
+    <string name="github_app_link" translatable="false">https://github.com/angelique2000/Esiea3ATDProgrammationMobile</string>
     <string name="api_country_app_text">Link to the countries api</string>
     <string name="api_country_app_link" translatable="false">https://restcountries.eu/</string>
     <string name="api_university_app_text">Link to the universities api</string>
     <string name="api_university_app_link" translatable="false">https://github.com/Hipo/university-domains-list</string>
     <string name="github_app_click">Click here</string>
     <string name="logo" translatable="false">Application\'s image</string>
-
-
-    <string name="ErrorApi">An error occurred on the api side, please try again or go to the api website to see the universities.</string>
-    <string name="number_of_university">We have found</string>
-    <string name="number_of_university2"> universities for this country.</string>
 
 </resources>

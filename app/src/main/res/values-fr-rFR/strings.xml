@@ -1,49 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="action_settings">Paramètres</string>
+
+    <!-- Buttons -->
     <string name="back_to_menu">Retour au menu</string>
+
+    <!-- Country Fragment -->
     <string name="capital_text">Capitale :</string>
     <string name="population_text">Population :</string>
     <string name="area_text">Superficie :</string>
     <string name="universities_list">Liste des universités</string>
+    <string name="continent_text">Continent :</string>
+    <string name="borders_text">Pays frontaliers :</string>
+    <string name="language_text">Langues :</string>
+    <string name="currencies_text">Monnaies :</string>
+    <string name="NoBorders">Il n\'y a pas de pays frontalier.</string>
+    <string name="NoCapital">Il n\'y a pas de capitale.</string>
+    <string name="NoLanguages">Il n\'y a pas de langues.</string>
+
+    <!-- University Fragment-->
+    <string name="ErrorApi">Une erreur s\'est produite du côté de l\'api, veuillez réessayer ou vous rendre sur le site de l\'api pour voir les universités.</string>
+    <string name="number_of_university">Nous avons trouvé</string>
+    <string name="number_of_university2">universités pour ce pays.</string>
+
+    <!-- Preference Titles -->
+    <string name="title_activity_settings">Paramètres de l\'application</string>
     <string name="location_header">Localisation</string>
     <string name="language_header">Langue</string>
     <string name="themes_header">Style</string>
     <string name="user_header">Pseudonyme</string>
-    <string name="title_activity_settings">Paramètres de l\'application</string>
+
+    <!-- User Preferences -->
     <string name="user_name">Mon nom d\'utilisateur</string>
+
+    <!-- Location Preferences -->
     <string name="location_region">Mon continent</string>
     <string name="location_country">Mon pays</string>
+
+    <!-- Language Preferences -->
     <string name="language_title">Langue étudiée</string>
     <string name="language_app">Langue de l\'application</string>
+
+    <!-- Theme Preferences -->
     <string name="theme_title">Style de l\'application</string>
+    <string name="greenStyle">Thème vert</string>
+    <string name="purpleStyle">Thème rouge</string>
+
+    <!-- Menu -->
+    <string name="welcome">Bienvenue sur cette application,</string>
     <string name="all_regions">Tous les continents</string>
     <string name="my_country">Mon pays</string>
     <string name="my_region">Mon continent</string>
     <string name="my_language_s_countries">Pays de la langue étudiée</string>
     <string name="application_s_information">Informations sur l\'application</string>
-    <string name="Europe">Europe</string>
+
+    <!-- Languages -->
     <string name="French">Français</string>
     <string name="English">Anglais</string>
     <string name="Deutsch">Allemand</string>
+
+    <!--Names of continents-->
+    <string name="Europe">Europe</string>
     <string name="Africa">Afrique</string>
     <string name="Americas">Amériques</string>
     <string name="Asia">Asie</string>
     <string name="Oceania">Océanie</string>
     <string name="Polar">Pôle</string>
-    <string name="continent_text">Continent :</string>
-    <string name="borders_text">Pays frontaliers :</string>
-    <string name="NoBorders">Il n\'y a pas de pays frontalier.</string>
-    <string name="NoCapital">Il n\'y a pas de capitale.</string>
-    <string name="enableWifi">Veuillez activer le wifi de votre téléphone pour accéder aux informations.</string>
-    <string name="tryNotification">Pour voir des notifications, attendez 10h30 ou 15h00.</string>
-    <string name="welcome">Bienvenue sur cette application,</string>
+
+    <!-- Notifications -->
     <string name="Notification">Notification</string>
-    <string name="NoLanguages">Il n\'y a pas de langues.</string>
-    <string name="language_text">Langues :</string>
-    <string name="currencies_text">Monnaies :</string>
-    <string name="greenStyle">Thème vert</string>
-    <string name="purpleStyle">Thème rouge</string>
+    <string name="tryNotification">Pour voir des notifications, attendez 10h30 ou 15h00.</string>
+    <string name="enableWifi">Veuillez activer le wifi de votre téléphone pour accéder aux informations.</string>
+    <string name="tryPopMessages">Pour voir des messages rapides, désactivez le wifi et consultez un pays ou une région que vous n\'avez pas encore vu.</string>
+    <string name="pop_messages">Message rapide</string>
+
+    <!-- Information fragment -->
     <string name="name_app_text">Nom de l\'application : UniversCity</string>
     <string name="author_app_text">Créatrice : Angélique P.</string>
     <string name="date_app_text">Date de la dernière version : 23/05/2021</string>
@@ -52,11 +83,6 @@
     <string name="languages_app_text">Langues supportées : Français, Anglais et Allemand.</string>
     <string name="api_country_app_text">Lien vers l\'api sur les pays</string>
     <string name="github_app_text">Lien vers le github :</string>
-    <string name="tryPopMessages">Pour voir des messages rapides, désactivez le wifi et consultez un pays ou une région que vous n\'avez pas encore vu.</string>
-    <string name="pop_messages">Message rapide</string>
-    <string name="ErrorApi">Une erreur s\'est produite du côté de l\'api, veuillez réessayer ou vous rendre sur le site de l\'api pour voir les universités.</string>
-    <string name="number_of_university">Nous avons trouvé</string>
-    <string name="number_of_university2">universités pour ce pays.</string>
     <string name="api_university_app_text">Lien vers l\'api sur les universités</string>
     <string name="github_app_click">Cliquez ici</string>
 </resources>

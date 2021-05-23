@@ -1,49 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="action_settings">Einstellungen</string>
+
+    <!-- Buttons -->
     <string name="back_to_menu">Zurück zum Menü</string>
+
+    <!-- Country Fragment -->
     <string name="capital_text">Hauptstadt:</string>
     <string name="population_text">Bevölkerung:</string>
     <string name="area_text">Fläche:</string>
     <string name="universities_list">Liste der Universitäten</string>
+    <string name="continent_text">Kontinent:</string>
+    <string name="borders_text">Grenzländer:</string>
+    <string name="language_text">Sprachen:</string>
+    <string name="currencies_text">Währungen:</string>
+    <string name="NoBorders">Es gibt kein Grenzland.</string>
+    <string name="NoCapital">Es gibt kein Hauptstadt.</string>
+    <string name="NoLanguages">Es gibt keine Sprachen.</string>
+
+    <!-- University Fragment-->
+    <string name="ErrorApi">Auf der Api-Seite ist ein Fehler aufgetreten, bitte versuchen Sie es erneut oder gehen Sie auf die Api-Webseite, um die Universitäten zu sehen.</string>
+    <string name="number_of_university">Wir haben</string>
+    <string name="number_of_university2">Universitäten für dieses Land gefunden.</string>
+
+    <!-- Preference Titles -->
+    <string name="title_activity_settings">Einstellungen der Anwendung</string>
     <string name="location_header">Position</string>
     <string name="language_header">Sprache</string>
     <string name="themes_header">Stil</string>
     <string name="user_header">Pseudonym</string>
-    <string name="title_activity_settings">Einstellungen der Anwendung</string>
+
+    <!-- User Preferences -->
     <string name="user_name">Mein Nutzername</string>
+
+    <!-- Location Preferences -->
     <string name="location_region">Mein Kontinent</string>
     <string name="location_country">Mein Land</string>
+
+    <!-- Language Preferences -->
     <string name="language_title">Untersuchte Sprache</string>
     <string name="language_app">Sprache der Anwendung</string>
+
+    <!-- Theme Preferences -->
     <string name="theme_title">Anwendungsstil</string>
+    <string name="greenStyle">Grüner Stil</string>
+    <string name="purpleStyle">Roter Stil</string>
+
+    <!-- Menu -->
+    <string name="welcome">Willkommen bei dieser Anwendung,</string>
     <string name="all_regions">Alle Kontinente</string>
     <string name="my_country">Mein Land</string>
     <string name="my_region">Mein Kontinent</string>
     <string name="my_language_s_countries">Länder der studierten Sprache</string>
     <string name="application_s_information">Informationen zur Anwendung</string>
-    <string name="Europe">Europa</string>
+
+    <!-- Languages -->
     <string name="French">Französisch</string>
     <string name="English">Englisch</string>
     <string name="Deutsch">Deutsch</string>
+
+    <!--Names of continents-->
+    <string name="Europe">Europa</string>
     <string name="Africa">Afrika</string>
     <string name="Americas">Amerikas</string>
     <string name="Asia">Asien</string>
     <string name="Oceania">Ozeanien</string>
     <string name="Polar">Pol</string>
-    <string name="continent_text">Kontinent:</string>
-    <string name="borders_text">Grenzländer:</string>
-    <string name="NoBorders">Es gibt kein Grenzland.</string>
-    <string name="NoCapital">Es gibt kein Hauptstadt.</string>
-    <string name="enableWifi">Bitte aktivieren Sie das WLAN Ihres Telefons, um auf die Informationen zuzugreifen.</string>
-    <string name="tryNotification">Um Benachrichtigungen zu sehen, warten Sie bis 10:30 oder 15:00.</string>
-    <string name="welcome">Willkommen bei dieser Anwendung,</string>
+
+    <!-- Notifications -->
     <string name="Notification">Benachrichtigung</string>
-    <string name="NoLanguages">Es gibt keine Sprachen.</string>
-    <string name="language_text">Sprachen:</string>
-    <string name="currencies_text">Währungen:</string>
-    <string name="greenStyle">Grüner Stil</string>
-    <string name="purpleStyle">Roter Stil</string>
+    <string name="tryNotification">Um Benachrichtigungen zu sehen, warten Sie bis 10:30 oder 15:00.</string>
+    <string name="tryPopMessages">Um Pop-Meldungen zu sehen, deaktivieren Sie WLAN und wählen Sie ein Land oder eine Region aus, die Sie noch nicht gesehen haben.</string>
+    <string name="pop_messages">Pop-Meldung</string>
+    <string name="enableWifi">Bitte aktivieren Sie das WLAN Ihres Telefons, um auf die Informationen zuzugreifen.</string>
+
+    <!-- Information fragment -->
     <string name="name_app_text">Name der Anwendung: UniversCity</string>
     <string name="author_app_text">Herstellerin: Angélique P.</string>
     <string name="date_app_text">Datum der letzten Version: 23/05/2021</string>
@@ -52,11 +83,6 @@
     <string name="languages_app_text">Unterstützte Sprachen: Französisch, Englisch und Deutsch.</string>
     <string name="api_country_app_text">Link zum Länder-Api</string>
     <string name="github_app_text">Link zum Github:</string>
-    <string name="tryPopMessages">Um Pop-Meldungen zu sehen, deaktivieren Sie WLAN und wählen Sie ein Land oder eine Region aus, die Sie noch nicht gesehen haben.</string>
-    <string name="pop_messages">Pop-Meldung</string>
-    <string name="ErrorApi">Auf der Api-Seite ist ein Fehler aufgetreten, bitte versuchen Sie es erneut oder gehen Sie auf die Api-Webseite, um die Universitäten zu sehen.</string>
-    <string name="number_of_university">Wir haben</string>
-    <string name="number_of_university2">Universitäten für dieses Land gefunden.</string>
     <string name="api_university_app_text">Link zur Universitäts-Api</string>
     <string name="github_app_click">Klicken Sie hier</string>
 </resources>
