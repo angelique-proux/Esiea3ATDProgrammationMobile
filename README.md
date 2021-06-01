@@ -51,7 +51,7 @@ Voici un aperçu de cette page :
 ##### > Universités enregistrées
 Sur cette page, vous retrouverez le nom du pays sélectionné ainsi que le nombre d'universités ou écoles du supérieur trouvées.
 Vous aurez également accès à la liste des universités. Pour consulter le site web de l'université qui vous plaît, il vous suffit de cliquer sur son nom. Une page web s'ouvrira ensuite à la bonne adresse.
-Appuyez sur le bouton "retour au menu" pour recommencer votre recherche. Appuyez sur le bouton "retour au pays" pour revoir les informations du pays sélectionné.
+Appuyez sur le bouton "retour au menu" pour recommencer votre recherche. Appuyez sur le bouton "retour" pour revoir les informations du pays sélectionné.
 Les paramètres sont toujours accessibles en haut de l'écran.
 Voici un aperçu de cette page :
 
@@ -64,6 +64,7 @@ Vous pouvez également ouvrir la page des deux api en cliquant sur leur adresse 
 Vous pouvez toujours retourner au menu et accéder aux paramètres en haut de l'écran.
 Voici un aperçu de cette page :
 
+![AppInfo](https://user-images.githubusercontent.com/72751313/119238937-facfec00-bb45-11eb-8ae2-70b6a628debc.png)
 
 ##### > Réglages
 Sur cette page, vous pouvez renseigner vos informations. Vous pouvez renseigner un nom d'utilisateur, une localisation (continent et pays), une langue étudiée et celle choisie pour l'application.
